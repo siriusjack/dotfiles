@@ -7,10 +7,13 @@
 !/.bash_aliases
 !/.bash_profile
 !/.bashrc
+# vim関連
 !/.vimrc
 !/.vim
+# git関連
 !/.gitignore
 !/.gitconfig
 !/.gitmodules
-
+# irb関連の設定ファイル
+!/.irbrc
 
