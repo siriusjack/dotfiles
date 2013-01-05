@@ -5,15 +5,15 @@
 # prompt
 #autoload -U colors
 #colors
-PROMPT='[%n@%m]# '
-RPROMPT='[%d]'
+PROMPT='%c %#'
+# RPROMPT='%d'
 
 # completion
 autoload -U compinit
 compinit
 setopt correct
-zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
-
+# zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
 # history
 HISTFILE=~/.zsh_history
 HISTSIZE=10000
