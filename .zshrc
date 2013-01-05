@@ -5,7 +5,7 @@
 # prompt
 #autoload -U colors
 #colors
-PROMPT='%c %#'
+PROMPT='%c %# '
 # RPROMPT='%d'
 
 # completion
