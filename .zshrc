@@ -2,6 +2,13 @@
 # ~/.zshrc
 #
 
+#path for rbenv
+#reference: http://qiita.com/items/9dd797f42e7bea674705
+export PATH="$HOME/.rbenv/bin:$PATH"
+eval "$(rbenv init - zsh)"
+export CC=/usr/bin/gcc
+
+
 # prompt
 #autoload -U colors
 #colors
