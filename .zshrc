@@ -32,6 +32,7 @@ setopt pushd_ignore_dups
 
 # alias
 alias rm='rm -i'
+alias ls='ls -a'
 alias cp='cp -i'
 alias mv='mv -i'
 alias vi='vim'
