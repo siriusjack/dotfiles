@@ -25,7 +25,7 @@
  " Enable syntax highlighting
  " 色づけをオン
  syntax on
- 
+ colorscheme desert
  
  "------------------------------------------------------------
  " Must have options {{{1
@@ -114,7 +114,7 @@
  " this line is also included, vim will neither flash nor beep.  If visualbell
  " is unset, this does nothing.
  " そしてビジュアルベルも無効化する
- set t_vb=
+ " set t_vb=
  
  " Enable use of the mouse for all modes
  " 全モードでマウスを有効化
@@ -148,9 +148,9 @@
  " Do not change 'tabstop' from its default value of 8 with this setup.
  " タブ文字の代わりにスペース2個を使う場合の設定。
  " この場合、'tabstop'はデフォルトの8から変えない。
- set shiftwidth=2
- set softtabstop=2
- set expandtab
+ "  set shiftwidth=2
+ "  set softtabstop=2
+ "  set expandtab
  
  " Indentation settings for using hard tabs for indent. Display tabs as
  " two characters wide.
