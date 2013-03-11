@@ -16,16 +16,3 @@ eval "$(rbenv init -)"
 PATH="/Library/Frameworks/Python.framework/Versions/Current/bin:${PATH}"
 export PATH
 
-
-
-
-# settings written by macports ----------------------------------------------------------------------///
-
-##
-# Your previous /Users/yoshihiro/.bash_profile file was backed up as /Users/yoshihiro/.bash_profile.macports-saved_2013-03-11_at_19:21:33
-##
-
-# MacPorts Installer addition on 2013-03-11_at_19:21:33: adding an appropriate PATH variable for use with MacPorts.
-export PATH=/opt/local/bin:/opt/local/sbin:$PATH
-# Finished adapting your PATH environment variable for use with MacPorts.
-
