@@ -25,7 +25,7 @@
  " Enable syntax highlighting
  " 色づけをオン
  syntax on
- colorscheme desert
+ colorscheme default
  
  "------------------------------------------------------------
  " Must have options {{{1
@@ -59,6 +59,14 @@
  " 歴史的にモードラインはセキュリティ上の脆弱性になっていたので、
  " オフにして代わりに上記のsecuremodelinesスクリプトを使うとよい。
  " set nomodeline
+
+ set backup
+ set backupdir=$HOME/.vim-backup
+ let &directory = $backupdir
+
+ set directory=/tmp
+ set directory=~/.vim/tmp
+ set directory=.
  
  
  "------------------------------------------------------------
