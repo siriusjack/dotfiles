@@ -1,45 +1,40 @@
-#
-# ~/.zshrc
-#
+# Path to your oh-my-zsh configuration.
+ZSH=$HOME/.oh-my-zsh
 
-#path for rbenv
-#reference: http://qiita.com/items/9dd797f42e7bea674705
-export PATH="$HOME/.rbenv/bin:$PATH"
-eval "$(rbenv init - zsh)"
-export CC=/usr/bin/gcc
+# Set name of the theme to load.
+# Look in ~/.oh-my-zsh/themes/
+# Optionally, if you set this to "random", it'll load a random theme each
+# time that oh-my-zsh is loaded.
+# ZSH_THEME="robbyrussell"
 
+# Example aliases
+# alias zshconfig="mate ~/.zshrc"
+# alias ohmyzsh="mate ~/.oh-my-zsh"
 
-# prompt
-#autoload -U colors
-#colors
-PROMPT='%c %# '
-# RPROMPT='%d'
+# Set to this to use case-sensitive completion
+# CASE_SENSITIVE="true"
 
-# completion
-autoload -U compinit
-compinit
-setopt correct
-# zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
-zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
-# history
-HISTFILE=~/.zsh_history
-HISTSIZE=10000
-SAVEHIST=10000
-setopt hist_ignore_dups
-setopt share_history
-setopt auto_pushd
-setopt pushd_ignore_dups
+# Comment this out to disable bi-weekly auto-update checks
+# DISABLE_AUTO_UPDATE="true"
 
-# alias
-alias rm='rm -i'
-alias ls='ls -a'
-alias cp='cp -i'
-alias mv='mv -i'
-alias vi='vim'
-alias -g G='| grep'
-alias -g L='| less'
-alias -g H='| head'
-alias -g T='| tail'
-alias -g S='| sort'
-alias -g W='| wc'
-alias -g X='| xargs'
+# Uncomment to change how many often would you like to wait before auto-updates occur? (in days)
+# export UPDATE_ZSH_DAYS=13
+
+# Uncomment following line if you want to disable colors in ls
+# DISABLE_LS_COLORS="true"
+
+# Uncomment following line if you want to disable autosetting terminal title.
+DISABLE_AUTO_TITLE="true"
+
+# Uncomment following line if you want red dots to be displayed while waiting for completion
+# COMPLETION_WAITING_DOTS="true"
+
+# Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
+# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
+# Example format: plugins=(rails git textmate ruby lighthouse)
+
+plugins=(brew bundler capistrano coffee command-not-found extract gem git git-flow github heroku history history-substring-search lein mvn node npm osx pip python rails rails3 rbenv redis-cli rsync ruby rvm svn thor urltools vagrant vi-mode vundle yum)
+source $ZSH/oh-my-zsh.sh
+
+# Customize to your needs...
+source $HOME/.zshrc.custom

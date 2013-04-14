@@ -1,0 +1,29 @@
+"-------------------------------------------------------------------------------
+" その他 Misc
+"-------------------------------------------------------------------------------
+
+
+ "------------------------------------------------------------
+ " Must have options
+ 
+ set directory=/tmp
+ set directory=~/.vim/tmp
+ set directory=.
+ 
+ "------------------------------------------------------------
+ " Usability options
+ set ignorecase
+ set smartcase
+ 
+ set nostartofline
+ 
+ set confirm
+ set cmdheight=2
+ set number
+
+" ;でコマンド入力( ;と:を入れ替)
+" noremap ; :
+" pluginとかでnmap :call hoge..とかやってるやつがあるので、
+" :でもexコマンドに入れるようにしておく
+" noremap : ;
+
