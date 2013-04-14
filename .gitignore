@@ -7,15 +7,17 @@
 !/.bash_aliases
 !/.bash_profile
 !/.bashrc
-
 !/.zshrc
-# vim関連
+# tmux
+.tmux.conf
+# vim
 !/.vimrc
 !/.vim
-# git関連
+# git
 !/.gitignore
 !/.gitconfig
 !/.gitmodules
-# irb関連の設定ファイル
+# ruby
 !/.irbrc
-
+# python
+!/.pystartup
