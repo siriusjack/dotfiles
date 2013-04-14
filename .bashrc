@@ -1,5 +1,5 @@
 # loading aliases
-[[ -s ~/.alias ]] && source ~/.alias
+[[ -s ~/.bash.alias ]] && source ~/.bash.alias
 
 # set pystartup
 export PYTHONSTARTUP=${HOME}/.pystartup
