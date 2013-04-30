@@ -18,15 +18,22 @@ nmap 9 $
 " insert mode での移動
 inoremap  <C-e> <END>
 inoremap  <C-a> <HOME>
-" インサートモードでもhjklで移動（Ctrl押すけどね）
-inoremap <C-j> <Down>
-inoremap <C-k> <Up>
-inoremap <C-h> <Left>
-inoremap <C-l> <Right>
 
-"<space>j, <space>kで画面送り
-noremap <Space>j <C-f>
-noremap <Space>k <C-b>
+" " インサートモードでもhjklで移動（Ctrl押すけどね）
+" inoremap <C-j> <Down>
+" inoremap <C-k> <Up>
+" inoremap <C-h> <Left>
+" inoremap <C-l> <Right>
+
+" インサートモードでの矢印移動
+imap [A <Up>
+imap [B <Down>
+imap [5C <Right>
+imap [5D <Left>
+
+" "<space>j, <space>kで画面送り
+" noremap <Space>j <C-f>
+" noremap <Space>k <C-b>
 
 " spaceで次のbufferへ。back-spaceで前のbufferへ
 nmap <Space><Space> ;MBEbn<CR>
@@ -88,7 +95,7 @@ nnoremap <expr> <C-w>gF  <SID>do_git_diff_aware_gf('<C-w>gF')
 function! s:do_git_diff_aware_gf(command)
   let target_path = expand('<cfile>')
   if target_path =~# '^[ab]/'  " with a peculiar prefix of git-diff(1)?
-    if filereadable(target_path) || isdirectory(target_path)
+  if filereadable(target_path) || isdirectory(target_path)
       return a:command
     else
       " BUGS: Side effect - Cursor position is changed.

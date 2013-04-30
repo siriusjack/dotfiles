@@ -1,0 +1,6 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =4
+let g:netrw_dirhist_1='/Users/yoshihiro/dotfiles/.vim'
+let g:netrw_dirhist_2='/Users/yoshihiro/dotfiles/.zsh'
+let g:netrw_dirhist_3='/Users/yoshihiro/.vim'
+let g:netrw_dirhist_4='/Users/yoshihiro/.rbenv'

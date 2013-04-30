@@ -33,7 +33,9 @@ DISABLE_AUTO_TITLE="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 
-plugins=(brew bundler capistrano coffee command-not-found extract gem git git-flow github heroku history history-substring-search lein mvn node npm osx pip python rails rails3 rbenv redis-cli rsync ruby rvm svn thor urltools vagrant vi-mode vundle yum)
+#plugins=(brew bundler capistrano coffee command-not-found extract gem git git-flow github heroku history history-substring-search lein mvn node npm osx pip python rails rails3 rbenv redis-cli rsync ruby rvm svn thor urltools vagrant vi-mode vundle yum)
+
+plugins=(brew bundler capistrano coffee command-not-found extract gem git git-flow github heroku history history-substring-search lein mvn node npm osx pip python rails rails3 redis-cli rsync ruby rvm svn thor urltools vagrant vi-mode vundle yum)
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
