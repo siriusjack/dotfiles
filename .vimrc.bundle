@@ -322,4 +322,6 @@ endif
 "
 " NeoBundle 'gmarik/vundle'
 
+  " minimap-vim : - 縮小表示をつける"
+  NeoBundle 'koron/minimap-vim'
 filetype plugin indent on
