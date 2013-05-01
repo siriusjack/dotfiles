@@ -3,7 +3,7 @@
 filetype off
 
 if has('vim_starting')
-  set runtimepath+=~/.vim/bundle/neobundle.vim.git
+  set runtimepath+=~/.vim/bundle/neobundle.vim
   call neobundle#rc(expand('~/.vim/bundle/'))
 endif
 
@@ -43,7 +43,7 @@ endif
   NeoBundle 'Gundo'
 
   " surround.vim : テキストを括弧で囲む／削除する
-  NeoBundle 'tpope/surround.vim'
+  " NeoBundle 'tpope/surround.vim'
 
   " smartchr.vim : ==などの前後を整形
   NeoBundle 'smartchr'
@@ -104,7 +104,7 @@ endif
   NeoBundle 'Shougo/neosnippet.git'
 
   " various langueages snippets
-  NeoBundle 'honza/snipmate-snippets'
+  "NeoBundle 'honza/snipmate-snippets'
 
   " for rsense
   NeoBundle 'm2ym/rsense'
@@ -174,7 +174,7 @@ endif
   NeoBundle 'taglist.vim'
 
   " エラーがある場所をhilight
-  NeoBundle 'errormarker.vim'
+  "NeoBundle 'errormarker.vim'
 
   " tagsを利用したソースコード閲覧・移動補助機能 tagsファイルの自動生成
   " NeoBundle 'Source-Explorer-srcexpl.vim'
@@ -194,22 +194,22 @@ endif
   NeoBundle 'jQuery'
 
   " nginx conf
-  NeoBundle 'nginx.vim'
+  " NeoBundle 'nginx.vim'
 
   " markdown
   NeoBundle 'tpope/vim-markdown'
 
   " coffee script
-  NeoBundle 'kchmck/vim-coffee-script'
+  " NeoBundle 'kchmck/vim-coffee-script'
 
   " python
   NeoBundle 'yuroyoro/vim-python'
 
   " scala
-  NeoBundle 'yuroyoro/vim-scala'
+  " NeoBundle 'yuroyoro/vim-scala'
 
   " clojure
-  NeoBundle 'jondistad/vimclojure'
+  " NeoBundle 'jondistad/vimclojure'
 
   " ghc-mod
   NeoBundle 'eagletmt/ghcmod-vim'
@@ -226,10 +226,10 @@ endif
   NeoBundle 'minibufexpl.vim'
 
   " NERDTree : ツリー型エクスプローラ
-  NeoBundle 'The-NERD-tree'
+  " NeoBundle 'The-NERD-tree'
 
   " vtreeexplorer.vim : ツリー状にファイルやディレクトリの一覧を表示
-  NeoBundle 'vtreeexplorer'
+  " NeoBundle 'vtreeexplorer'
 " }}}
 
 

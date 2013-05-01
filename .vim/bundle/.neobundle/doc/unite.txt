@@ -214,6 +214,12 @@ g:unite_update_time				*g:unite_update_time*
 
 		The default value is 500.
 
+g:unite_prompt			                *g:unite_prompt*
+		Unite default prompt. Can be set with `-prompt` option for 
+		each unite session.
+
+		The default value is '> '.
+
 g:unite_enable_start_insert			*g:unite_enable_start_insert*
 		If this variable is 1, unite buffer will be in Insert Mode
 		immediately.
@@ -265,8 +271,8 @@ g:unite_abbr_highlight				*g:unite_abbr_highlight*
 		
 		The default value is "Normal".
 
-g:unite_enable_use_short_source_names
 				*g:unite_enable_use_short_source_names*
+g:unite_enable_use_short_source_names
 		If this variable is 1, unite buffer will show short source
 		names.
 
@@ -276,6 +282,15 @@ g:unite_marked_icon				*g:unite_marked_icon*
 		This variable controls unite marked candidates icon.
 		
 		Default value is "*"
+
+					*g:unite_force_overwrite_statusline*
+g:unite_force_overwrite_statusline
+		If this variable is 1, unite will overwrite 'statusline'
+		automatically.
+		Note: If you want to change 'statusline' in unite buffer, you
+		must set it to 0.
+
+		The default value is 1.
 
 g:unite_quick_match_table			*g:unite_quick_match_table*
 		The table of completion candidates of quick match list,
@@ -403,7 +418,7 @@ g:unite_source_file_rec_async_command
 		Specifies the filelist command and arguments in file_rec/async
 		source.
 
-		The default value is "ag" or "ack-grep" or "find" and the args.
+		The default value is "ag" or "find" and the args.
 
 		The default value is 1000.
 g:unite_source_grep_command			*g:unite_source_grep_command*
@@ -698,6 +713,9 @@ Normal mode mappings.
 <Plug>(unite_print_candidate)		*<Plug>(unite_print_candidate)*
 		Shows the target of the action of the selected candidate.
 
+<Plug>(unite_print_message_log)		*<Plug>(unite_print_message_log)*
+		Shows the message log in current unite buffer.
+
 <Plug>(unite_cursor_top)			*<Plug>(unite_cursor_top)*
 		Moves the cursor to the top of the Unite buffer.
 
@@ -861,6 +879,12 @@ Insert mode mappings.
 <Plug>(unite_redraw)				*i_<Plug>(unite_redraw)*
 		Same to |<Plug>(unite_redraw)|.
 
+<Plug>(unite_print_candidate)		*i_<Plug>(unite_print_candidate)*
+		Same to |<Plug>(unite_print_candidate)|.
+
+<Plug>(unite_print_message_log)		*i_<Plug>(unite_print_message_log)*
+		Same to |<Plug>(unite_print_message_log)|.
+
 <Plug>(unite_new_candidate)			*i_<Plug>(unite_new_candidate)*
 		Same to |<Plug>(unite_new_candidate)|.
 
@@ -891,7 +915,7 @@ M		|<Plug>(unite_toggle_max_candidates)|
 <Tab>		|<Plug>(unite_choose_action)|
 <C-n>		|<Plug>(unite_rotate_next_source)|
 <C-p>		|<Plug>(unite_rotate_previous_source)|
-<C-g>		|<Plug>(unite_print_candidate)|
+<C-g>		|<Plug>(unite_print_message_log)|
 <C-l>		|<Plug>(unite_redraw)|
 <C-h>		|<Plug>(unite_delete_backward_path)|
 gg		|<Plug>(unite_cursor_top)|
@@ -1053,6 +1077,10 @@ unite#smart_map({narrow-map}, {select-map})	*unite#smart_map()*
 >
 		inoremap <buffer><expr> ' unite#smart_map("'", unite#do_action('preview'))
 <
+unite#get_status_string()			 *unite#get_status_string()*
+		Returns unite status string. It is useful to custom
+		statusline.
+
 unite#mappings#set_current_filters({filters})
 					*unite#mappings#set_current_filters()*
 		Changes current unite buffer filters.
@@ -1405,6 +1433,10 @@ context.
 		-auto-preview
 		When you selected a candidate, it runs "preview" action
 		automatically.
+						*unite-options-auto-highlight*
+		-auto-highlight
+		When you selected a candidate, it runs "highlight" action
+		automatically.
 
 						*unite-options-completion*
 		-completion
@@ -1417,7 +1449,7 @@ context.
 
 						*unite-options-vertical*
 		-vertical
-		Splits unite window vertically.
+		Splits unite window vertically. |g:unite_winwidth| is used.
 
 						*unite-options-horizontal*
 		-horizontal
@@ -1476,13 +1508,12 @@ context.
 					*unite-options-hide-source-names*
 		-hide-source-names
 		Hides source names.
-		Note: This option doesn't hide status line.
 		Note: Source highlight will be overwritten by other sources.
 
 					*unite-options-hide-status-line*
 		-hide-status-line
-		Hides status line.
-		Note: This option doesn't hide source names.
+		Nothing.
+		Note: This option is obsolete.
 
 					*unite-options-max-multi-lines*
 		-max-multi-lines={max-lines}
@@ -1531,6 +1562,16 @@ context.
 		wrap and displaying continues on the next line.
 		Note: This option will set 'wrap' option and disable
 		|unite-options-multi-line| option.
+
+						*unite-options-select*
+		-select={select-candidate-index}
+		If it is set, unite will select specified candidate.
+		Note: The candidate index is 0-origin.
+
+						*unite-options-log*
+		-log
+		Enable log mode. In log mode, cursor move to bottom
+		automatically.
 
 ==============================================================================
 SOURCES						*unite-sources*
@@ -1635,7 +1676,9 @@ bookmark	Nominates files or directories you bookmarked as candidates.
 		is used.
 
 		Source arguments:
-		1. Bookmark file name.
+		1. Bookmark file name. 
+		use `_` to load from all bookmark files
+		use `*` to glob
 
 						*unite-source-source*
 source		Nominates Unite source names themselves as candidates.
@@ -1707,7 +1750,7 @@ grep		Nominates "grep" command output as candidates.
 	if executable('ag')
 	  " Use ag in unite grep source.
 	  let g:unite_source_grep_command = 'ag'
-	  let g:unite_source_grep_default_opts = '--nocolor --nogroup --column'
+	  let g:unite_source_grep_default_opts = '--nocolor --nogroup --hidden'
 	  let g:unite_source_grep_recursive_opt = ''
 	elseif executable('ack-grep')
 	  " Use ack in unite grep source.
@@ -2191,6 +2234,8 @@ This kind extends actions of |unite-action-openable|.  Let me explain about
 the additional actions defined in this.
 	open		Jump to the location of the candidate
 	preview		Preview around the location of the candidate
+	highlight	highlight the location of the candidate if the 
+			corresponding buffer is visible
 	replace		Replace selected candidates with |qfreplace| plugin
 
 command						*unite-action-command*
@@ -2762,6 +2807,11 @@ action_table		Dictionary		(Required)
 				in |<Plug>(unite_choose_action)|.  If this
 				attribute is omitted, "1" is used.
 
+			is_start		(Number)	(Optional)
+				If this attribute is "1", the action start
+				unite sources. If this attribute is omitted,
+				"0" is used.
+
 					*unite-kind-attribute-alias_table*
 alias_table		Dictionary		(Optional)
 			Adds an alias table unique to the kind.  In
@@ -2878,6 +2928,15 @@ EXAMPLES					*unite-examples*
 	"let g:unite_enable_start_insert = 1
 	"let g:unite_enable_short_source_names = 1
 	
+	" Like ctrlp.vim settings.
+	"let g:unite_enable_start_insert = 1
+	"let g:unite_winheight = 10
+	"let g:unite_split_rule = 'botright'
+	
+	" Prompt choices.
+	"let g:unite_prompt = '❫ '
+	"let g:unite_prompt = '» '
+	
 	autocmd FileType unite call s:unite_my_settings()
 	function! s:unite_my_settings()"{{{
 	  " Overwrite settings.
@@ -2977,9 +3036,58 @@ A:
 	call unite#do_candidates_action('some_action',
 	\  unite#get_candidates([['file', expand('%')]]))
 <
+Q: unite.vim statusline conflicts with powerline.
+https://github.com/Lokaltog/powerline
+https://github.com/Lokaltog/vim-powerline (deprecated)
+
+A: You must set |g:unite_force_overwrite_statusline| to 0.
+>
+	let g:unite_force_overwrite_statusline = 0
+<
+
+And you must install below custom theme for powerline.
+
+For powerline:
+https://github.com/zhaocai/powerline (custom theme for unite.vim included
+edition)
+https://github.com/Lokaltog/powerline/issues/470
+
+For vim-powerline:
+Note: The description is Japanese
+http://d.hatena.ne.jp/osyo-manga/20130429/1367235332
+https://github.com/osyo-manga/vim-powerline-unite-theme
 
 ==============================================================================
 CHANGELOG					*unite-changelog*
+
+2013-04-30
+- Fixed <Plug>(unite_delete_backward_path).
+- Added g:unite_force_overwrite_statusline option.
+- Fixed start sources behavior.
+
+2013-04-29
+- Improved start sources behavior.
+- Added log option.
+- Restore statusline.
+
+2013-04-28
+- Improved unite status line.
+- Improved message behavior.
+- Added <Plug>(unite_print_message_log) mapping.
+
+2013-04-25
+- Fixed unite#clear_message().
+
+2013-04-22
+- Changed tab source behavior.
+
+2013-04-18
+- Improved documentation for ag.
+- Fixed unite#get_candidates().
+
+2013-04-17
+- Use vimproc#readdir() in file_rec source.
+- Changed start action in source kind.
 
 2013-04-14
 - Fixed action source problems.

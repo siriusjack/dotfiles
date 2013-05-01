@@ -388,7 +388,7 @@ g:neobundle#default_options			*g:neobundle#default_options*
 		Example:
 >
 		let g:neobundle#default_options =
-		          \ { 'rev' : {'type__update_style' : 'current'} }
+		          \ { 'rev' : {'rev' : 'ver.8'} }
 		NeoBundle 'Shougo/neocomplcache', '', 'rev'
 <
 		Defaults to "{}".
@@ -797,27 +797,6 @@ OPTIONS 					*neobundle-options*
 			Note: To re-call on_source hook when reloading .vimrc,
 			you must call on_source hook in end of .vimrc.
 
-					*neobundle-options-type__shallow*
-		type__shallow		(Number)
-		If set to 1, neobundle will use a "shallow clone" when
-		installing the plugin.
-		If omitted, 1 is used. But if the uri is "git@github.com:~",
-		then 0.
-		Note: A shallow clone lets you clone faster, but you lose the
-		ability to push it.
-		Note: This option is available for git only.
-
-					*neobundle-options-type__update_style*
-		type__update_style	(String)
-		If set to "default", neobundle will update from the default
-		branch (master) instead of current branch.
-		If set to "current", neobundle will update from the current
-		branch instead of current branch.
-		"default" is useful for user-defined branches.
-		"current" is useful for topic branches.
-		If omitted, "default" is used.
-		Note: This attribute is available for git only.
-
 					*neobundle-options-type__protocol*
 		type__protocol		(String)
 		The protocol used for types.
@@ -986,7 +965,7 @@ neobundle/update
 		If you use the source with "-auto-quit" option, the unite
 		buffer will close automatically.
 >
-		:Unite neobundle/update -auto-quit
+		:Unite neobundle/update -log -auto-quit
 <
 				*neobundle-unite-source-neobundle-search*
 neobundle/search
@@ -1174,17 +1153,38 @@ A:
 <
 Q: What's the "outdated" plugin?
 A:
-Last update time is older than one month -> Automatic updates are disabled
-until one month from the last update.
 Last update time is older than one week -> Automatic updates are disabled
-until one week from the last update.
+until one day from the last update.
 Last update time is older within one week -> Automatic updates are every time.
 Note: If you use update with name or use "all" argument in neobundle/update
 source or use "!" in |:NeoBundleUpdate| command, this feature will be
 disabled; it forces updates them.
 
+Q: I want to update messages in unite buffer.
+A:
+>
+	Unite -log neobundle/update
+<
+
 ==============================================================================
 CHANGELOG					*neobundle-changelog*
+
+2013-04-30
+- Disabled shallow clones in git.
+- Fixed initial cursor position in log.
+- Improved syntax highlight.
+
+2013-04-29
+- Don't save nosync install information.
+
+2013-04-28
+- Improved for redraw.
+
+2013-04-23
+- Fixed for branch.
+
+2013-04-22
+- Improved outdated algorithm.
 
 2013-04-08
 - Added FAQ section.
