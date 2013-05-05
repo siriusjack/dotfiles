@@ -11,6 +11,8 @@ endif
 " set rtp+=~/.vim/bundle/vundle/
 " call vundle#rc()
 
+
+
 " Edit {{{
   " 自動閉じタグ
   " NeoBundle 'yuroyoro/vim-autoclose'
@@ -28,6 +30,8 @@ endif
   NeoBundle 'smartchr'
 " }}}
 
+
+
 " Completion {{{
   " 補完 neocomplcache.vim : 究極のVim的補完環境
   NeoBundle 'Shougo/neocomplcache'
@@ -35,6 +39,8 @@ endif
   " neocomplcacheのsinpet補完
   NeoBundle 'Shougo/neosnippet.git'
 " }}}
+
+
 
 " Searching/Moving{{{
   " smooth_scroll.vim : スクロールを賢く
@@ -47,6 +53,8 @@ endif
   " grep.vim : 外部のgrep利用。:Grepで対話形式でgrep :Rgrepは再帰
   NeoBundle 'grep.vim'
 " }}}
+
+
 
 " Programming {{{
   " quickrun.vim : 編集中のファイルを簡単に実行できるプラグイン
@@ -61,7 +69,9 @@ endif
   " エラーがある場所をhilight
   "NeoBundle 'errormarker.vim'
 " }}}
-"
+
+
+
 " Syntax {{{
   NeoBundle 'haml.zip'
   NeoBundle 'JavaScript-syntax'
@@ -74,6 +84,8 @@ endif
   NeoBundle 'eagletmt/ghcmod-vim'
   NeoBundle 'scrooloose/syntastic'
 " }}}
+
+
 
 " Buffer {{{
   " DumbBuf.vim : quickbufっぽくbufferを管理。 "<Leader>b<Space>でBufferList
@@ -90,9 +102,12 @@ endif
 " }}}
 
 
+
 " Encording {{{
   NeoBundle 'banyan/recognize_charcode.vim'
 " }}}
+
+
 
 " Utility {{{
 
@@ -131,13 +146,19 @@ endif
   NeoBundle 'airblade/vim-gitgutter'
 " }}}
 
+
+
 " ColorSchema{{{{
-  " color schema 256
+  NeoBundle 'altercation/vim-colors-solarized'
+  NeoBundle 'nanotech/jellybeans.vim'
+  NeoBundle 'tomasr/molokai'
   NeoBundle 'desert256.vim'
   NeoBundle 'mrkn256.vim'
   NeoBundle 'tomasr/molokai'
   NeoBundle 'yuroyoro/yuroyoro256.vim'
 " }}}
+
+
 
 " Unite {{{{
   " unite.vim : - すべてを破壊し、すべてを繋げ - vim scriptで実装されたanythingプラグイン
@@ -148,6 +169,7 @@ endif
   NeoBundle 'thinca/vim-unite-history'
   NeoBundle 'tsukkee/unite-tag'
   NeoBundle 'choplin/unite-vim_hacks'
+  NeoBundle 'ujihisa/unite-colorscheme'
 " }}}
 
 filetype plugin indent on
