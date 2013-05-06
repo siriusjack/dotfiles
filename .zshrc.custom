@@ -396,7 +396,7 @@ alias where="command -v"
 
 case "${OSTYPE}" in
 freebsd*|darwin*)
-    alias ls="ls -alG"
+    alias ls="ls -G"
     zle -N expand-to-home-or-insert
     bindkey "@"  expand-to-home-or-insert
     ;;
