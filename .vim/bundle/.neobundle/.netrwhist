@@ -1,3 +1,5 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =1
+let g:netrw_dirhist_cnt =3
 let g:netrw_dirhist_1='/Users/yoshihiro/.oh-my-zsh'
+let g:netrw_dirhist_2='/Users/yoshihiro/Documents/C/CutterTutorial/stack/config'
+let g:netrw_dirhist_3='/Users/yoshihiro/Downloads/sympo2013/.git'
