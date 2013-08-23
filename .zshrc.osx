@@ -33,16 +33,16 @@ INFOPATH=/usr/local/info:$INFOPATH
 export INFOPATH
 
 # Google App Engine SDK for python
-export GAE_SDK_VERSION=1.3.4
-GAE_SDK_INSTALLED_DIR=~/sandbox/GoogleAppEngine/sdk
-export GAE_HOME=$GAE_SDK_INSTALLED_DIR/$GAE_SDK_VERSION/google_appengine
-export PATH=$PATH:$GAE_HOME
+#export GAE_SDK_VERSION=1.3.4
+#GAE_SDK_INSTALLED_DIR=~/sandbox/GoogleAppEngine/sdk
+#export GAE_HOME=$GAE_SDK_INSTALLED_DIR/$GAE_SDK_VERSION/google_appengine
+#export PATH=$PATH:$GAE_HOME
 
 # Google App Engine SDK for java
-export GAEJ_SDK_VERSION=1.3.7
-GAEJ_SDK_INSTALLED_DIR=~/sandbox/GAEJava/sdk
-export GAEJ_HOME=$GAEJ_SDK_INSTALLED_DIR/appengine-java-sdk-$GAEJ_SDK_VERSION
-export PATH=$PATH:$GAEJ_HOME/bin
+#export GAEJ_SDK_VERSION=1.3.7
+#GAEJ_SDK_INSTALLED_DIR=~/sandbox/GAEJava/sdk
+#export GAEJ_HOME=$GAEJ_SDK_INSTALLED_DIR/appengine-java-sdk-$GAEJ_SDK_VERSION
+#export PATH=$PATH:$GAEJ_HOME/bin
 
 # Python
 # alias python='/usr/local/bin/python'
@@ -55,9 +55,9 @@ export PATH=$PATH:$GAEJ_HOME/bin
 # export PYTHONSTARTUP=~/.pythonstartup
 
 # Ruby
-if [[ -s /Users/yoshihiro/.rvm/scripts/rvm ]] ; then source $HOME/.rvm/scripts/rvm ; fi
-eval "$(rbenv init - zsh)"
-export REFE_DATA_DIR=/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/share/refe
+#if [[ -s /Users/yoshihiro/.rvm/scripts/rvm ]] ; then source $HOME/.rvm/scripts/rvm ; fi
+#eval "$(rbenv init - zsh)"
+#export REFE_DATA_DIR=/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/share/refe
 
 # node.js
 export NODE_PATH=/usr/local/lib/node:$PATH
