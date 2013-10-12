@@ -3,8 +3,7 @@
 "-------------------------------------------------------------------------------
 
 " colorscheme mrkn256
-" colorscheme default
-colorscheme yuroyoro256
+colorscheme default
 
 " ターミナルタイプによるカラー設定
 if &term =~ "xterm-256color" || "screen-256color"

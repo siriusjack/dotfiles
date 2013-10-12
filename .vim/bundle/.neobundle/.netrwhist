@@ -1,5 +1,10 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =3
+let g:netrw_dirhist_cnt =8
 let g:netrw_dirhist_1='/Users/yoshihiro/.oh-my-zsh'
 let g:netrw_dirhist_2='/Users/yoshihiro/Documents/C/CutterTutorial/stack/config'
 let g:netrw_dirhist_3='/Users/yoshihiro/Downloads/sympo2013/.git'
+let g:netrw_dirhist_4='/Users/yoshihiro/src/VTK6.0.0/CMake'
+let g:netrw_dirhist_5='/Users/yoshihiro/Downloads/research_dsa/dsa_hori/workingSpace/.git'
+let g:netrw_dirhist_6='/Users/yoshihiro/c/diffusion/data'
+let g:netrw_dirhist_7='/Users/yoshihiro/c/kadai_omp_loop'
+let g:netrw_dirhist_8='/Users/yoshihiro/c/kvsoceanvis-read-only/app/LinkedView'

@@ -1,164 +1,58 @@
 "vunlde.vimで管理してるpluginを読み込む
-
 filetype off
-
 if has('vim_starting')
   set runtimepath+=~/.vim/bundle/neobundle.vim
   call neobundle#rc(expand('~/.vim/bundle/'))
 endif
 
-
-" set rtp+=~/.vim/bundle/vundle/
-" call vundle#rc()
-
-
-
 " Edit {{{
-  " 自動閉じタグ
-  " NeoBundle 'yuroyoro/vim-autoclose'
-
   " -- でメソッドチェーン整形
   NeoBundle 'c9s/cascading.vim'
-
-  " Align : 高機能整形・桁揃えプラグイン
-  NeoBundle 'Align'
-
-  " YankRing.vim : ヤンクの履歴を管理し、順々に参照、出力できるようにする
   NeoBundle 'YankRing.vim'
-
-  " smartchr.vim : ==などの前後を整形
-  NeoBundle 'smartchr'
 " }}}
 
-
-
 " Completion {{{
-  " 補完 neocomplcache.vim : 究極のVim的補完環境
   NeoBundle 'Shougo/neocomplcache'
-
-  " neocomplcacheのsinpet補完
   NeoBundle 'Shougo/neosnippet.git'
 " }}}
 
-
-
 " Searching/Moving{{{
-  " smooth_scroll.vim : スクロールを賢く
-  " NeoBundle 'Smooth-Scroll'
-  NeoBundle 'yuroyoro/smooth_scroll.vim'
-
   " vim-smartword : 単語移動がスマートな感じで
   NeoBundle 'smartword'
-
-  " grep.vim : 外部のgrep利用。:Grepで対話形式でgrep :Rgrepは再帰
   NeoBundle 'grep.vim'
+  NeoBundle 'yonchu/accelerated-smooth-scroll'
 " }}}
-
-
 
 " Programming {{{
-  " quickrun.vim : 編集中のファイルを簡単に実行できるプラグイン
-  NeoBundle 'thinca/vim-quickrun'
-
   " Pydiction : Python用の入力補完
   NeoBundle 'Pydiction'
-
-  " ソースコード上のメソッド宣言、変数宣言の一覧を表示
   NeoBundle 'taglist.vim'
-
-  " エラーがある場所をhilight
-  "NeoBundle 'errormarker.vim'
+  NeoBundle 'errormarker.vim'
 " }}}
 
-
-
 " Syntax {{{
-  NeoBundle 'haml.zip'
   NeoBundle 'JavaScript-syntax'
   NeoBundle 'jQuery'
   NeoBundle 'tpope/vim-markdown'
-  NeoBundle 'kchmck/vim-coffee-script'
-  NeoBundle 'yuroyoro/vim-python'
-  NeoBundle 'yuroyoro/vim-scala'
-  NeoBundle 'jondistad/vimclojure'
   NeoBundle 'eagletmt/ghcmod-vim'
-  NeoBundle 'scrooloose/syntastic'
 " }}}
-
-
 
 " Buffer {{{
-  " DumbBuf.vim : quickbufっぽくbufferを管理。 "<Leader>b<Space>でBufferList
-  NeoBundle 'DumbBuf'
-
   " minibufexpl.vim : タブエディタ風にバッファ管理ウィンドウを表示
   NeoBundle 'minibufexpl.vim'
-
-  " NERDTree : ツリー型エクスプローラ
-  " NeoBundle 'The-NERD-tree'
-
-  " vtreeexplorer.vim : ツリー状にファイルやディレクトリの一覧を表示
-  " NeoBundle 'vtreeexplorer'
 " }}}
-
-
-
-" Encording {{{
-  NeoBundle 'banyan/recognize_charcode.vim'
-" }}}
-
-
 
 " Utility {{{
-
-  " vimshell : vimのshell
-  NeoBundle 'Shougo/vimshell.git'
-
-  " vimproc : vimから非同期実行。vimshelleで必要
-  NeoBundle 'Shougo/vimproc', {
-      \ 'build' : {
-      \     'windows' : 'make -f make_mingw32.mak',
-      \     'cygwin' : 'make -f make_cygwin.mak',
-      \     'mac' : 'make -f make_mac.mak',
-      \     'unix' : 'make -f make_unix.mak',
-      \    },
-      \ }
-
-  " cecutil.vim : 他のpluginのためのutillity1
-  NeoBundle 'cecutil'
-
-  " urilib.vim : vim scriptからURLを扱うライブラリ
-  NeoBundle 'tyru/urilib.vim'
-
-  " utillity
   NeoBundle 'L9'
-
-  " Buffer管理のLibrary
-  NeoBundle 'thinca/vim-openbuf'
-
-  " vimdoc 日本語
-  NeoBundle 'yuroyoro/vimdoc_ja'
-
-  " ステータスラインをカッコよくする
-  NeoBundle 'Lokaltog/vim-powerline'
-
-  " shows a git diff in the 'gutter' (sign column)
   NeoBundle 'airblade/vim-gitgutter'
+  NeoBundle 'Lokaltog/vim-powerline'
 " }}}
-
-
 
 " ColorSchema{{{{
-  NeoBundle 'altercation/vim-colors-solarized'
   NeoBundle 'nanotech/jellybeans.vim'
   NeoBundle 'tomasr/molokai'
-  NeoBundle 'desert256.vim'
   NeoBundle 'mrkn256.vim'
-  NeoBundle 'tomasr/molokai'
-  NeoBundle 'yuroyoro/yuroyoro256.vim'
 " }}}
-
-
 
 " Unite {{{{
   " unite.vim : - すべてを破壊し、すべてを繋げ - vim scriptで実装されたanythingプラグイン

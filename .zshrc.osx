@@ -1,5 +1,5 @@
-export PATH=/usr/local/bin:/usr/local/sbin:$PATH
-export PATH=/opt/local/bin:/opt/local/sbin:~/bin:$PATH
+#export PATH=/usr/local/bin:/usr/local/sbin:$PATH
+#export PATH=/opt/local/bin:/opt/local/sbin:~/bin:$PATH
 
 # osx alias
 alias pbc='pbcopy'
@@ -20,11 +20,11 @@ export GNUTERM=x11
 
 # Java
 ##Java7
-export JAVA_HOME=/Library/Java/JavaVirtualMachines/1.7.0.jdk/Contents/Home
+#export JAVA_HOME=/Library/Java/JavaVirtualMachines/1.7.0.jdk/Contents/Home
 # export JAVA_HOME=/Library/Java/Home
-export PATH=$JAVA_HOME/bin:$PATH
+#export PATH=$JAVA_HOME/bin:$PATH
 # デフォルトエンコーディングSJISをUTF-8へ
-export _JAVA_OPTIONS="-Dfile.encoding=UTF-8"
+#export _JAVA_OPTIONS="-Dfile.encoding=UTF-8"
 
 # man path
 MANPATH=/usr/local/man:$MANPATH
