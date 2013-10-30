@@ -1,0 +1,39 @@
+#!/bin/bash
+export PATH=~/bin:$PATH
+
+# settings for KVS
+export KVS_DIR=/usr/local/kvs
+export PATH=$KVS_DIR/bin:$PATH
+export LD_LIBRARY_PATH=/usr/local/kvs/lib:$LD_LIBRARY_PATH
+export CPLUS_INCLUDE_PATH=/usr/local/kvs/include:$CPLUS_INCLUDE_PATH
+
+
+# settings for OpenFOAM
+alias of21='hdutil attach $HOME/OPEMFOAM-v2.1.sparseimage; .$HOME/OpenFOAM/OpenFOAM-2.1.0/etc/bashrc'
+
+# settings for sage
+alias sage='/Applications/Sage-5.8-OSX-64bit-10.8.app/Contents/Resources/sage/sage'
+
+# settings for pystartup
+export PYTHONSTARTUP=${HOME}/.pystartup
+
+# settings for GAMS
+GAMS_PATH=/Applications/GAMS/gams24.1_osx_x64_64_sfx
+export PATH=$PATH:GAMS_PATH
+
+# settings for Qt5
+# export QTDIR=~/Qt/5.1.1/clang_64
+# export PATH=$QTDIR/bin:$PATH
+# export LD_LIBRARY_PATH=$QTDIR/lib:$LD_LIBRARY_PATH
+# export CPLUS_INCLUDE_PATH=$QTDIR/include:$CPLUS_INCLUDE_PATH
+# export PATH=/usr/local/opt/qt5/bin:$PATH
+# export LD_LIBRARY_PATH=/usr/local/opt/qt5/lib:$LD_LIBRARY_PATH
+# export CPLUS_INCLUDE_PATH=/usr/local/opt/qt5/include:$CPLUS_INCLUDE_PATH
+
+# settings for Qt4
+function qxmake() {
+qmake -project;
+qmake -spec macx-xcode;
+}
+alias qxmake=qxmake
+
