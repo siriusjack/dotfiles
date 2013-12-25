@@ -34,13 +34,15 @@ filetype plugin indent on " Required!
 
 " execute "set colorcolumn=" . join(range(81, 9999), ',')
 
-:set tabstop=4
+:set tabstop=2
 :set noexpandtab
+:set shiftwidth=2
+:set softtabstop=2
+:set autoindent
+:set smartindent
 :set list
-:set listchars=tab:>\ 
-
+:set listchars=tab:.\ 
 :set colorcolumn=80
-
 :set mouse=a
 
 
@@ -54,5 +56,4 @@ let g:neocomplete#enable_at_startup = 1
 let g:neocomplete#enable_smart_case = 1
 " Set minimum syntax keyword length.
 let g:neocomplete#sources#syntax#min_keyword_length = 2
-
 
