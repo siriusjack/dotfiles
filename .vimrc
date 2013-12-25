@@ -42,9 +42,11 @@ filetype plugin indent on " Required!
 :set smartindent
 :set list
 :set listchars=tab:.\ 
+" 80行目にラインを引く
 :set colorcolumn=80
+" ターミナルでマウスを使えるようにする
 :set mouse=a
-
+:set guioptions+=a
 
 
 "******************************************************************************
