@@ -23,6 +23,7 @@ endif
 
 NeoBundle "neocomplete.vim"
 NeoBundle "taglist.vim"
+NeoBundle "yonchu/accelerated-smooth-scroll"
 syntax on
 filetype on
 filetype plugin indent on " Required!
@@ -58,4 +59,12 @@ let g:neocomplete#enable_at_startup = 1
 let g:neocomplete#enable_smart_case = 1
 " Set minimum syntax keyword length.
 let g:neocomplete#sources#syntax#min_keyword_length = 2
+
+
+"******************************************************************************
+" SMOOTH.SCROLL
+"******************************************************************************
+" http://yonchu.hatenablog.com/entry/2013/05/16/204727
+let g:ac_smooth_scroll_fb_sleep_time_msec = 5
+let g:ac_smooth_scroll_du_sleep_time_msec = 5
 
