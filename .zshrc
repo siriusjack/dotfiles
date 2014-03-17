@@ -1,6 +1,14 @@
-#!/bin/bash
-export PATH=~/bin:$PATH
+# 色を使用できるようにする
+autoload -Uz colors
+colors
 
+# ヒストリの設定
+HISTFILE=~/.zsh_history
+HISTSIZE=1000000
+SAVEHIST=1000000
+
+
+export PATH=~/bin:$PATH
 # settings for homebrew
 export HOMEBREW_GITHUB_API_TOKEN=493c73f23a381ef4d92453071e2b6d8bbe7a5fb2
 
