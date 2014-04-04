@@ -27,3 +27,6 @@ qmake -spec macx-xcode;
 }
 alias qxmake=qxmake
 
+# settings for EMSCRIPTEN
+EMSCRIPTEN_PATH=$HOME/emscripten
+export PATH=$EMSCRIPTEN_PATH:$PATH
