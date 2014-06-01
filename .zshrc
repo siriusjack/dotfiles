@@ -1,40 +1,45 @@
+# ショートカット
+alias o=open
+
+# PROMPT
+case "$TERM" in
+    xterm*|kterm*|rxvt*)
+    PROMPT=$(print "%(5~,%-2~/.../%2~,%~)%{\e[33m%}%# %b")
+    PROMPT=$(print "%{\e]2;%n@%m: %~\7%}$PROMPT") # title bar
+    ;;
+    *)
+    PROMPT='%m:%c%# '
+    ;;
+esac
+
 # 色を使用できるようにする
 autoload -Uz colors
 colors
+
+## 補完時に大小文字を区別しない
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
+zstyle ':completion:*' menu select=1
+autoload -U compinit && compinit
 
 # ヒストリの設定
 HISTFILE=~/.zsh_history
 HISTSIZE=1000000
 SAVEHIST=1000000
 
+#########################################
+# OS別の設定
+case ${OSTYPE} in
+	darwin*)
+		export CLICOLOR=1
+		alias ls='ls -G -F'
+		;;
+	linux*)
+		;;
+esac
 
-export PATH=~/bin:$PATH
-# settings for homebrew
-export HOMEBREW_GITHUB_API_TOKEN=493c73f23a381ef4d92453071e2b6d8bbe7a5fb2
 
-
-# settings for KVS
-export KVS_DIR=/usr/local/kvs
-export PATH=$KVS_DIR/bin:$PATH
-# export LD_LIBRARY_PATH=/usr/local/kvs/lib:$LD_LIBRARY_PATH
-# export CPLUS_INCLUDE_PATH=/usr/local/kvs/include:$CPLUS_INCLUDE_PATH
-
-# settings for Qt5
-# export QTDIR=~/Qt/5.1.1/clang_64
-# export PATH=$QTDIR/bin:$PATH
-# export LD_LIBRARY_PATH=$QTDIR/lib:$LD_LIBRARY_PATH
-# export CPLUS_INCLUDE_PATH=$QTDIR/include:$CPLUS_INCLUDE_PATH
-# export PATH=/usr/local/opt/qt5/bin:$PATH
-# export LD_LIBRARY_PATH=/usr/local/opt/qt5/lib:$LD_LIBRARY_PATH
-# export CPLUS_INCLUDE_PATH=/usr/local/opt/qt5/include:$CPLUS_INCLUDE_PATH
-
-# settings for Qt4
-function qxmake() {
-qmake -project;
-qmake -spec macx-xcode;
-}
-alias qxmake=qxmake
-
-# settings for EMSCRIPTEN
-EMSCRIPTEN_PATH=$HOME/emscripten
-export PATH=$EMSCRIPTEN_PATH:$PATH
+##########################################
+# PATHの設定
+if [ -f ~/.bashrc.path ]; then
+	source ~/.bashrc.path
+fi

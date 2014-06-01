@@ -1,6 +1,7 @@
 # loading
 [[ -s ~/.bashrc.alias ]] && source ~/.bashrc.alias
 [[ -s ~/.bashrc.local ]] && source ~/.bashrc.local
+[[ -s ~/.bashrc.path  ]] && source ~/.bashrc.path
 
 alias ls='ls -G'
 alias ll='ls -l'

@@ -1,0 +1,1 @@
+/Users/Yoshihiro/dotfiles/.emacs.d

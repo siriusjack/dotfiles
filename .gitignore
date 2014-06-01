@@ -1,3 +1,5 @@
-ii# .DS_Store
-/.DS_Store
+.vim/
 
+!.emacs
+!.emacs.d
+!.tmux.conf
