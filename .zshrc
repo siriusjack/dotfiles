@@ -4,11 +4,16 @@ alias o=open
 # PROMPT
 case "$TERM" in
     xterm*|kterm*|rxvt*)
-    PROMPT=$(print "%(5~,%-2~/.../%2~,%~)%{\e[33m%}%# %b")
-    PROMPT=$(print "%{\e]2;%n@%m: %~\7%}$PROMPT") # title bar
+    #PROMPT=$(print "%(5~,%-2~/.../%2~,%~)%{\e[33m%}%# %b")
+    #PROMPT=$(print "%{\e]2;%n@%m: %~\7%}$PROMPT") # title bar
+    local currentDir="%B%F{yellow}[%~]%f%b"
+    local userInfo="%B%n%b"
+    PROMPT="$currentDir%F{yellow}%#%f "
     ;;
     *)
-    PROMPT='%m:%c%# '
+    local currentDir = "%B%F{orange}[%~]%f%b"$'\n'
+    local userInfo = "%n@%m"
+    PROMPT="$currentDir$userInfo>"
     ;;
 esac
 
