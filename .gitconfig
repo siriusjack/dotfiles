@@ -1,3 +1,12 @@
 [user]
 	name = siriusjack
-	email = siriusjack@gmail.com
+	email = siirusjack@gmail.com\n
+[color]
+	ui = true
+[core]
+	editor = /usr/bin/vim
+	excludesfile = /Users/yoshihiro/.gitignore_global
+[alias]
+	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+	cm = commit -am
+	st = status

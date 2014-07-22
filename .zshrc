@@ -1,50 +1,82 @@
-# ショートカット
-alias o=open
+# Path to your oh-my-zsh installation.
+export ZSH=$HOME/.oh-my-zsh
 
-# PROMPT
-case "$TERM" in
-    xterm*|kterm*|rxvt*)
-    #PROMPT=$(print "%(5~,%-2~/.../%2~,%~)%{\e[33m%}%# %b")
-    #PROMPT=$(print "%{\e]2;%n@%m: %~\7%}$PROMPT") # title bar
-    local currentDir="%B%F{yellow}[%~]%f%b"
-    local userInfo="%B%n%b"
-    PROMPT="$currentDir%F{yellow}%#%f "
-    ;;
-    *)
-    #local currentDir = "%B%F{orange}[%~]%f%b"$'\n'
-    #local userInfo = "%n@%m"
-    PROMPT="$currentDir$userInfo> "
-    ;;
-esac
+# Set name of the theme to load.
+# Look in ~/.oh-my-zsh/themes/
+# Optionally, if you set this to "random", it'll load a random theme each
+# time that oh-my-zsh is loaded.
+ZSH_THEME="robbyrussell"
+# ZSH_THEME="wedisagree"
+#ZSH_THEME="ys"
+#ZSH_THEME="cypher"
 
-# 色を使用できるようにする
-autoload -Uz colors
-colors
+# Example aliases
+# alias zshconfig="mate ~/.zshrc"
+# alias ohmyzsh="mate ~/.oh-my-zsh"
 
-## 補完時に大小文字を区別しない
-zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
-zstyle ':completion:*' menu select=1
-autoload -U compinit && compinit
+# Uncomment the following line to use case-sensitive completion.
+# CASE_SENSITIVE="true"
 
-# ヒストリの設定
-HISTFILE=~/.zsh_history
-HISTSIZE=1000000
-SAVEHIST=1000000
+# Uncomment the following line to disable bi-weekly auto-update checks.
+# DISABLE_AUTO_UPDATE="true"
 
-#########################################
-# OS別の設定
-case ${OSTYPE} in
-	darwin*)
-		export CLICOLOR=1
-		alias ls='ls -G -F'
-		;;
-	linux*)
-		;;
-esac
+# Uncomment the following line to change how often to auto-update (in days).
+# export UPDATE_ZSH_DAYS=13
+
+# Uncomment the following line to disable colors in ls.
+# DISABLE_LS_COLORS="true"
+
+# Uncomment the following line to disable auto-setting terminal title.
+# DISABLE_AUTO_TITLE="true"
+
+# Uncomment the following line to disable command auto-correction.
+# DISABLE_CORRECTION="true"
+
+# Uncomment the following line to display red dots whilst waiting for completion.
+# COMPLETION_WAITING_DOTS="true"
+
+# Uncomment the following line if you want to disable marking untracked files
+# under VCS as dirty. This makes repository status check for large repositories
+# much, much faster.
+# DISABLE_UNTRACKED_FILES_DIRTY="true"
+
+# Uncomment the following line if you want to change the command execution time
+# stamp shown in the history command output.
+# The optional three formats: "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
+# HIST_STAMPS="mm/dd/yyyy"
+
+# Would you like to use another custom folder than $ZSH/custom?
+# ZSH_CUSTOM=/path/to/new-custom-folder
+
+# Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
+# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
+# Example format: plugins=(rails git textmate ruby lighthouse)
+fpath=(/usr/local/share/zsh-completions $fpath)
+plugins=(git)
+
+source $ZSH/oh-my-zsh.sh
 
 
-##########################################
-# PATHの設定
-if [ -f ~/.bashrc.path ]; then
-	source ~/.bashrc.path
-fi
+# User configuration
+typeset -U path cdpath fpath manpath
+source ~/.bashrc.path
+source ~/.bashrc.alias
+/usr/local/bin/virtualenvwrapper.sh
+
+# export MANPATH="/usr/local/man:$MANPATH"
+
+# You may need to manually set your language environment
+# export LANG=en_US.UTF-8
+
+# Preferred editor for local and remote sessions
+# if [[ -n $SSH_CONNECTION ]]; then
+#   export EDITOR='vim'
+# else
+#   export EDITOR='mvim'
+# fi
+
+# Compilation flags
+# export ARCHFLAGS="-arch x86_64"
+
+# ssh
+# export SSH_KEY_PATH="~/.ssh/dsa_id"

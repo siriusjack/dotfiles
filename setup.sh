@@ -14,6 +14,8 @@ DOT_FILES=(\
 	.vimrc\
 	.pythonrc.py\
 	.zshrc\
+	.gitconfig\
+	.gitignore_global
 )
 
 for file in ${DOT_FILES[@]}
