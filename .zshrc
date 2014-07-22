@@ -11,9 +11,9 @@ case "$TERM" in
     PROMPT="$currentDir%F{yellow}%#%f "
     ;;
     *)
-    local currentDir = "%B%F{orange}[%~]%f%b"$'\n'
-    local userInfo = "%n@%m"
-    PROMPT="$currentDir$userInfo>"
+    #local currentDir = "%B%F{orange}[%~]%f%b"$'\n'
+    #local userInfo = "%n@%m"
+    PROMPT="$currentDir$userInfo> "
     ;;
 esac
 
