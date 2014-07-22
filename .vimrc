@@ -31,9 +31,9 @@ else
 
     NeoBundle "Shougo/unite.vim"
     NeoBundle "taglist.vim"
-    NeoBundle 'vim-scripts/gtags.vim'
+    " NeoBundle 'vim-scripts/gtags.vim'
     " NeoBundle "yonchu/accelerated-smooth-scroll"
-    NeoBundle "git://git.code.sf.net/p/vim-latex/vim-latex"
+    " NeoBundle "git://git.code.sf.net/p/vim-latex/vim-latex"
     
     " color scheme "
     NeoBundle 'ujihisa/unite-colorscheme'
