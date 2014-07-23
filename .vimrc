@@ -70,6 +70,11 @@ else
 	nnoremap <silent> ,f :<C-u>UniteWithBufferDir -buffer-name=files file<CR>
 	nnoremap <silent> ,b :<C-u>Unite buffer <CR>
 	NeoBundle 'Shougo/vimshell.vim'
+	nnoremap <silent> ,is :VimShell<CR>
+	nnoremap <silent> ,ipy :VimShellInteractive python<CR>
+	nnoremap <silent> ,irb :VimShellInteractive irb<CR>
+	vmap <silent> ,ss :VimShellSendString<CR>
+	nnoremap <silent> ,ss <S-v>:VimShellSendString<CR>
 	NeoBundle 'vim-scripts/YankRing.vim'
 	NeoBundle "taglist.vim"
 	" NeoBundle 'vim-scripts/gtags.vim'
@@ -79,7 +84,7 @@ else
 	let g:syntastic_python_checkers = ['pyflakes', 'pep8']
 	" color schemes "
 	NeoBundle 'ujihisa/unite-colorscheme'
-	nnoremap <silent> ,uc :<C-u>Unite colorscheme -auto-preview<CR>
+	nnoremap <silent> ,c :<C-u>Unite colorscheme -auto-preview<CR>
 	NeoBundle 'tomasr/molokai'
 	NeoBundle 'nanotech/jellybeans.vim'
 	NeoBundle 'thinca/vim-quickrun'
@@ -164,7 +169,7 @@ colorscheme peachpuff
 :set smartindent
 :set list
 :set listchars=tab:.\ 
-:set colorcolumn=80 "80行目にラインを引く
+":set colorcolumn=80 "80行目にラインを引く
 :set mouse=a "mouse on 
 :set guioptions+=a
 " バックアップなし
@@ -186,7 +191,9 @@ nnoremap <S-Down>  <C-w>+<CR>
 " 画面を1つに
 nnoremap <Space><o> :only<CR>
 " Edit vimrc
-nmap ,v :edit $MYVIMRC<CR>
+noremap ,v :edit $MYVIMRC<CR>
+noremap ; :
+noremap : ;
 
 "******************************************************************************
 " NEOCOMPLETE.VIM
@@ -197,14 +204,6 @@ let g:neocomplete#enable_at_startup = 1
 let g:neocomplete#enable_smart_case = 1
 " Set minimum syntax keyword length.
 let g:neocomplete#sources#syntax#min_keyword_length = 2
-
-"******************************************************************************
-" Vim-LaTeX
-"******************************************************************************
-let g:Tex_DefaultTargetFormat = 'pdf' "標準で.pdfにコンパイルして開いてね
-let g:Tex_ViewRule_pdf = 'open -a Preview.app' "PDFはPreview.appで開いてね
-let g:Tex_CompileRule_pdf = 'pdfplatex $*.tex' "pdflatexを使って.texから.pdfに変換してね
-
 
 "******************************************************************************
 " Add the virtualenv's site-packages to vim path
