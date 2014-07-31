@@ -67,6 +67,7 @@ source ~/.bashrc.local
 # PYTHONPATH
 # VTK, PARAVIEW
 export PYTHONPATH=/usr/local/opt/vtk5/lib/python2.7/site-packages:$PYTHONPATH
+export PYTHONSTARTUP=~/.pythonrc.py
 
 
 # export MANPATH="/usr/local/man:$MANPATH"

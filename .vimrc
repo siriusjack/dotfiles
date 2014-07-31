@@ -66,15 +66,21 @@ else
 		" 	" NeoComplCacheEnable 
 		" endfunction
 	endif
+	
+	
 	NeoBundle "Shougo/unite.vim"
 	nnoremap <silent> ,f :<C-u>UniteWithBufferDir -buffer-name=files file<CR>
 	nnoremap <silent> ,b :<C-u>Unite buffer <CR>
+
+	
 	NeoBundle 'Shougo/vimshell.vim'
 	nnoremap <silent> ,is :VimShell<CR>
 	nnoremap <silent> ,ipy :VimShellInteractive python<CR>
 	nnoremap <silent> ,irb :VimShellInteractive irb<CR>
 	vmap <silent> ,ss :VimShellSendString<CR>
 	nnoremap <silent> ,ss <S-v>:VimShellSendString<CR>
+	
+	
 	NeoBundle 'vim-scripts/YankRing.vim'
 	NeoBundle "taglist.vim"
 	" NeoBundle 'vim-scripts/gtags.vim'
@@ -82,11 +88,14 @@ else
 	" NeoBundle 'git://git.code.sf.net/p/vim-latex/vim-latex'
 	NeoBundle 'scrooloose/syntastic'
 	let g:syntastic_python_checkers = ['pyflakes', 'pep8']
+	
+	
 	" color schemes "
 	NeoBundle 'ujihisa/unite-colorscheme'
 	nnoremap <silent> ,c :<C-u>Unite colorscheme -auto-preview<CR>
 	NeoBundle 'tomasr/molokai'
 	NeoBundle 'nanotech/jellybeans.vim'
+	NeoBundle 'altercation/vim-colors-solarized'
 	NeoBundle 'thinca/vim-quickrun'
 	" NeoBundleLazy "thinca/vim-quickrun", {
 	"				\ "autoload": {
@@ -103,7 +112,10 @@ else
 	noremap <expr><silent> <C-c> quickrun#is_running() ? quickrun#sweep_sessions() : "\<C-c>"
 	set splitbelow
 	set splitright
-
+	NeoBundle 'alpaca-tc/alpaca_powertabline'
+	NeoBundle 'Lokaltog/vim-powerline'
+	
+	
 	"Vimで正しくvirtualenvを処理できるようにする
 	NeoBundle 'jmcantrell/vim-virtualenv'
 	" Djangoを正しくVimで読み込めるようにする
@@ -111,7 +123,6 @@ else
 	" 			\ "autoload": {
 	" 			\   "filetypes": ["python", "python3", "djangohtml"]
 	" 			\ }}
-
 	" Jedi
 	NeoBundleLazy "davidhalter/jedi-vim", {
 				\ "autoload": {
@@ -158,7 +169,11 @@ filetype plugin indent on " Required!
 "******************************************************************************
 " NORMAL SETTINGS
 "******************************************************************************
-" execute "set colorcolumn=" . join(range(81, 9999), ',')
+" 80行目にラインを引く
+":set colorcolumn=80
+execute "set colorcolumn=" . join(range(81, 9999), ',')
+" 入力モード龍に素早くjjを入力した場合にESC
+inoremap jj <Esc>
 colorscheme peachpuff
 :set backspace=indent,eol,start
 :set tabstop=2
@@ -169,29 +184,25 @@ colorscheme peachpuff
 :set smartindent
 :set list
 :set listchars=tab:.\ 
-":set colorcolumn=80 "80行目にラインを引く
 :set mouse=a "mouse on 
 :set guioptions+=a
 " バックアップなし
 set nowritebackup
 set nobackup
 set noswapfile
-" 入力モード龍に素早くjjを入力した場合にESC
-inoremap jj <Esc>
 " Ctrl + hjkl でウィンドウ間を移動
 nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
-" hift + 矢印でウィンドウサイズを変更
-nnoremap <S-Left>  <C-w><<CR>
-nnoremap <S-Right> <C-w>><CR>
-nnoremap <S-Up>    <C-w>-<CR>
-nnoremap <S-Down>  <C-w>+<CR>
-" 画面を1つに
-nnoremap <Space><o> :only<CR>
+" shift + 矢印でウィンドウサイズを変更
+nnoremap <silent> <S-Left>  :5wincmd <<CR>
+nnoremap <silent> <S-Right> :5wincmd ><CR>
+nnoremap <silent> <S-Up>    :5wincmd -<CR>
+nnoremap <silent> <S-Down>  :5wincmd +<CR>
 " Edit vimrc
 noremap ,v :edit $MYVIMRC<CR>
+" ; と : を交換
 noremap ; :
 noremap : ;
 
