@@ -79,8 +79,11 @@ else
 	nnoremap <silent> ,irb :VimShellInteractive irb<CR>
 	vmap <silent> ,ss :VimShellSendString<CR>
 	nnoremap <silent> ,ss <S-v>:VimShellSendString<CR>
-	
-	
+
+	NeoBundle 'Shougo/vimfiler.vim'
+	let g:vimfiler_as_default_explorer = 1
+
+
 	NeoBundle 'vim-scripts/YankRing.vim'
 	NeoBundle "taglist.vim"
 	" NeoBundle 'vim-scripts/gtags.vim'
@@ -106,7 +109,7 @@ else
 				\ "_" : {
 				\ "runner" : "vimproc",
 				\ "runner/vimproc/updatetime" : 60,
-				\ "vsplit" : "",
+				\ "split" : "",
 				\},
 				\}
 	noremap <expr><silent> <C-c> quickrun#is_running() ? quickrun#sweep_sessions() : "\<C-c>"
@@ -171,10 +174,18 @@ filetype plugin indent on " Required!
 "******************************************************************************
 " 80行目にラインを引く
 ":set colorcolumn=80
-execute "set colorcolumn=" . join(range(81, 9999), ',')
+hi ColorColumn guibg=#ffffff
+noremap <Plug>(ToggleColorColumn)
+            \ :<c-u>let &colorcolumn = len(&colorcolumn) > 0 ? '' :
+            \   join(range(81, 9999), ',')<CR>
+nmap cc <Plug>(ToggleColorColumn)
+
 " 入力モード龍に素早くjjを入力した場合にESC
 inoremap jj <Esc>
-colorscheme peachpuff
+" ; と : を交換
+noremap ; :
+noremap : ;
+colorscheme darkblue 
 :set backspace=indent,eol,start
 :set tabstop=2
 :set noexpandtab
@@ -202,9 +213,6 @@ nnoremap <silent> <S-Up>    :5wincmd -<CR>
 nnoremap <silent> <S-Down>  :5wincmd +<CR>
 " Edit vimrc
 noremap ,v :edit $MYVIMRC<CR>
-" ; と : を交換
-noremap ; :
-noremap : ;
 
 "******************************************************************************
 " NEOCOMPLETE.VIM
@@ -219,6 +227,7 @@ let g:neocomplete#sources#syntax#min_keyword_length = 2
 "******************************************************************************
 " Add the virtualenv's site-packages to vim path
 "******************************************************************************
+if has('python')
 py << EOF
 import os.path
 import sys
@@ -228,4 +237,5 @@ if 'VIRTUAL_ENV' in os.environ:
 	sys.path.insert(0, project_base_dir)
 	activate_this = os.path.join(project_base_dir, 'bin/activate_this.py')
 	execfile(activate_this, dict(__file__=activate_this))
-	EOF
+EOF
+endif
