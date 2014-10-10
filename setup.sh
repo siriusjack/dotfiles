@@ -7,6 +7,8 @@ DOT_FILES=(\
 	.bashrc.path\
 	.emacs\
 	.emacs.d\
+	.gitconfig\
+	.gitignore_global
 	.latexmkrc\
 	.tmux.conf\
 	.vim\
