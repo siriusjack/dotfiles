@@ -64,10 +64,10 @@ source ~/.bashrc.alias
 source ~/.bashrc.local
 /usr/local/bin/virtualenvwrapper.sh
 
-# PYTHONPATH
-# VTK, PARAVIEW
-export PYTHONPATH=/usr/local/opt/vtk5/lib/python2.7/site-packages:$PYTHONPATH
-export PYTHONSTARTUP=~/.pythonrc.py
+# # PYTHONPATH
+# # VTK, PARAVIEW
+# export PYTHONPATH=/usr/local/opt/vtk5/lib/python2.7/site-packages:$PYTHONPATH
+# export PYTHONSTARTUP=~/.pythonrc.py
 
 
 # export MANPATH="/usr/local/man:$MANPATH"
