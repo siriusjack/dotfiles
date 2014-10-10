@@ -109,7 +109,7 @@ else
 				\ "_" : {
 				\ "runner" : "vimproc",
 				\ "runner/vimproc/updatetime" : 60,
-				\ "split" : "",
+				\ "vsplit" : "",
 				\},
 				\}
 	noremap <expr><silent> <C-c> quickrun#is_running() ? quickrun#sweep_sessions() : "\<C-c>"
@@ -185,7 +185,7 @@ inoremap jj <Esc>
 " ; と : を交換
 noremap ; :
 noremap : ;
-colorscheme darkblue 
+colorscheme default 
 :set backspace=indent,eol,start
 :set tabstop=2
 :set noexpandtab
