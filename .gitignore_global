@@ -1,0 +1,13 @@
+#### 以下を自動で無視 ####
+.*
+*.swp
+*~
+tags
+./*/
+
+#### Git で管理するファイルリスト ####
+!.gitignore
+!.gitignore_global
+!.gitconfig
+!.gitmodules
+!.gitkeep
