@@ -1,4 +1,1 @@
-# openfoam settings
-alias paraview="/Applications/ParaView\ 3.14.1.app/Contents/MacOS/paraview"
-# alias paraview="/Applications/ParaView\ 3.14.0-RC2.app/Contents/MacOS/paraview"
-alias parax="touch case.foam && paraview --data=case.foam &"
+alias ll="ls -l"
