@@ -1,1 +1,5 @@
 alias ll="ls -l"
+[[ -s ~/.bashrc.alias.local  ]] && source ~/.bashrc.alias.local
+alias ls='ls -G'
+alias ll='ls -l'
+alias la='ls -a'
