@@ -51,8 +51,7 @@ source $ZSH/oh-my-zsh.sh
 
 # User configuration
 typeset -U path cdpath fpath manpath
-source ~/.bashrc.alias
-source ~/.bashrc.path
+source $HOME/.bashrc
 #export PATH="/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:${HOME}/bin"
 # export MANPATH="/usr/local/man:$MANPATH"
 
