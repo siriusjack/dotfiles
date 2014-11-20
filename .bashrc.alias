@@ -1,7 +1,4 @@
 # global settings
 alias ll='ls -l'
 alias la='ls -a'
-alias getpath='pwd | pbcopy'
-
-# local settings
 [[ -s ~/.bashrc.alias.local  ]] && source ~/.bashrc.alias.local
