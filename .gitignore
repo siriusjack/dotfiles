@@ -4,3 +4,7 @@
 !.emacs.d
 !.tmux.conf
 !.zshrc
+!.bashrc*
+
+
+*.local

@@ -1,4 +1,4 @@
 # global settings
 alias ll='ls -l'
-alias la='ls -a'
+alias la='ll -a'
 [[ -s ~/.bashrc.alias.local  ]] && source ~/.bashrc.alias.local
