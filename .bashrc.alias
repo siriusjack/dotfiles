@@ -1,4 +1,5 @@
 # global settings
 alias ll='ls -l'
 alias la='ll -a'
+alias crontab='crontab -i'
 [[ -s ~/.bashrc.alias.local  ]] && source ~/.bashrc.alias.local
