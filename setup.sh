@@ -9,7 +9,6 @@ DOT_FILES=(\
 	.emacs.d\
 	.gitconfig\
 	.gitignore_global
-	.latexmkrc\
 	.tmux.conf\
 	.vim\
 	.vimrc\
