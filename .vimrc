@@ -188,20 +188,21 @@ inoremap jj <Esc>
 noremap ; :
 noremap : ;
 " clipboard integration
-:set clipboard+=unnamed
-colorscheme default 
-:set backspace=indent,eol,start
-:set tabstop=8
-:set expandtab
-:set shiftwidth=4
-:set softtabstop=4
-:set smarttab
-:set autoindent
-:set smartindent
-:set list
-:set listchars=tab:.\ 
-:set mouse=a "mouse on 
-:set guioptions+=a
+set clipboard+=unnamed
+" colorscheme
+colorscheme darkblue 
+set backspace=indent,eol,start
+set tabstop=8
+set expandtab
+set shiftwidth=4
+set softtabstop=4
+set smarttab
+set autoindent
+set smartindent
+set list
+set listchars=tab:.\ 
+set mouse=a "mouse on 
+set guioptions+=a
 " バックアップなし
 set nowritebackup
 set nobackup
