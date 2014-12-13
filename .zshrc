@@ -86,5 +86,3 @@ export LANG=en_US.UTF-8
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-
-alias tmux='env LD_LIBRARY_PATH=$HOME/tmux-1.9a/libevent-2.0.21-stable/build/lib $HOME/tmux-1.9a/build/bin/tmux'
