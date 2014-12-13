@@ -1,0 +1,1 @@
+fpath=($HOME/local/share/zsh/5.0.7/functions $fpath)
