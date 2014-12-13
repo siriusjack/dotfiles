@@ -5,7 +5,8 @@
 !.tmux.conf
 !.zshrc
 !.zshrc.pre
+!.zshrc.post
 !.bashrc*
-
+!.tcshrc
 
 *.local
