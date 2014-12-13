@@ -1,4 +1,6 @@
-alias tmux 'env SHELL=`which zsh` env LD_LIBRARY_PATH=$HOME/source/tmux-1.9a/libevent-2.0.21-stable/build/lib $HOME/source/tmux-1.9a/build/bin/tmux'
-alias ls 'ls -l --color=auto'
+setenv LD_LIBRARY_PATH ${HOME}/local/lib:${LD_LIBRARY_PATH}
+setenv INCLUDE ${HOME}/local/include:${INCLUDE}
 setenv PATH ${HOME}/local/bin:${HOME}/bin:${PATH}
 
+alias ls 'ls -l --color=auto'
+alias tmux 'env SHELL=`which zsh` tmux'
