@@ -56,15 +56,6 @@ else
         " 			\ "autoload": {
         " 			\   "insert": 1,
         " 			\ }}
-        " 2013-07-03 14:30 原因不明だがNeoComplCacheEnableコマンドが見つからないので変更
-        " let g:neocomplcache_enable_at_startup = 1
-        " let s:hooks = neobundle#get_hooks("neocomplcache.vim")
-        " function! s:hooks.on_source(bundle)
-        " 	let g:acp_enableAtStartup = 0
-        " 	let g:neocomplcache_enable_smart_case = 1
-        " 	" NeoComplCacheを有効化
-        " 	" NeoComplCacheEnable 
-        " endfunction
     endif
 
 
@@ -137,24 +128,13 @@ else
                 \ }}
     let s:hooks = neobundle#get_hooks("jedi-vim")
     function! s:hooks.on_source(bundle)
-        " jediにvimの設定を任せると'completeopt+=preview'するので
-        " 自動設定機能をOFFにし手動で設定を行う
-        let g:jedi#auto_vim_configuration = 0
-        " 補完の最初の項目が選択された状態だと使いにくいためオフにする
+        let g:jedi#auto_vim_configuration = 1
         let g:jedi#popup_select_first = 0
-        let s:save_cpo = &cpo
-        set cpo&vim
-
         if g:jedi#popup_select_first == 0
             inoremap <buffer> . .<C-R>=jedi#complete_opened() ? "" : "\<lt>C-X>\<lt>C-O>\<lt>C-P>"<CR>
         endif
-
-        let &cpo = s:save_cpo
-        unlet s:save_cpo
         " quickrunと被るため大文字に変更
         let g:jedi#rename_command = '<Leader>R'
-        " gundoと被るため大文字に変更
-        let g:jedi#goto_assignments_command = '<Leader>G'
     endfunction	
 
 
