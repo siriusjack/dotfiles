@@ -13,3 +13,6 @@
 	li = log --pretty=format:\"<%h> %ad [%an] %Cgreen%d%Creset %s\" --date=short
 [url "https://"]
 	insteadOf = git://
+[ghq]
+	root = /Users/yoshihiro/.ghq
+        root = /Users/yoshihiro/.go/src
