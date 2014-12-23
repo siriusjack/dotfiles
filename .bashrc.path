@@ -11,6 +11,9 @@ if [ -d ${PYENV_ROOT} ]; then
 	eval "$(pyenv init -)"
 fi
 
+# node
+export NODEBREW_ROOT=$HOME/.nodebrew
+export PATH=$NODEBREW_ROOT/current/bin:$PATH
 
 # go
 export GOPATH=${HOME}/go 
