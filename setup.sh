@@ -1,11 +1,9 @@
 #!/bin/bash
 
-
 DOT_FILES=(\
 	.bashrc\
 	.bashrc.alias\
 	.bashrc.path\
-	.emacs\
 	.emacs.d\
 	.gitconfig\
 	.gitignore_global
@@ -13,8 +11,9 @@ DOT_FILES=(\
 	.vim\
 	.vimrc\
 	.pythonrc.py\
-	.gitignore_global
+	.gitignore_global\
 	.zshrc\
+	.zshenv\
 )
 
 for file in ${DOT_FILES[@]}

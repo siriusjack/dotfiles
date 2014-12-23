@@ -1,5 +1,5 @@
 # local
-export PATH=/usr/local/bin:$HOME/bin:$PATH
+export PATH=$HOME/local/bin:/usr/local/bin:$HOME/bin:$PATH
 
 # python
 export PYTHONPATH=$HOME/Dropbox/py:$PYTHONPATH
