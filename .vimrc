@@ -118,24 +118,24 @@ else
     " 			\   "filetypes": ["python", "python3", "djangohtml"]
     " 			\ }}
     " Jedi
-    NeoBundleLazy "davidhalter/jedi-vim", {
-                \ "autoload": {
-                \   "filetypes": ["python", "python3", "djangohtml"],
-                \ },
-                \ "build": {
-                \   "mac": "pip install jedi",
-                \   "unix": "pip install jedi",
-                \ }}
-    let s:hooks = neobundle#get_hooks("jedi-vim")
-    function! s:hooks.on_source(bundle)
-        let g:jedi#auto_vim_configuration = 1
-        let g:jedi#popup_select_first = 0
-        if g:jedi#popup_select_first == 0
-            inoremap <buffer> . .<C-R>=jedi#complete_opened() ? "" : "\<lt>C-X>\<lt>C-O>\<lt>C-P>"<CR>
-        endif
-        " quickrunと被るため大文字に変更
-        let g:jedi#rename_command = '<Leader>R'
-    endfunction	
+    " NeoBundleLazy "davidhalter/jedi-vim", {
+    "             \ "autoload": {
+    "             \   "filetypes": ["python", "python3", "djangohtml"],
+    "             \ },
+    "             \ "build": {
+    "             \   "mac": "pip install jedi",
+    "             \   "unix": "pip install jedi",
+    "             \ }}
+    " let s:hooks = neobundle#get_hooks("jedi-vim")
+    " function! s:hooks.on_source(bundle)
+    "     let g:jedi#auto_vim_configuration = 1
+    "     let g:jedi#popup_select_first = 0
+    "     if g:jedi#popup_select_first == 0
+    "         inoremap <buffer> . .<C-R>=jedi#complete_opened() ? "" : "\<lt>C-X>\<lt>C-O>\<lt>C-P>"<CR>
+    "     endif
+    "     " quickrunと被るため大文字に変更
+    "     let g:jedi#rename_command = '<Leader>R'
+    " endfunction	
 
 
     " インストールされていないプラグインのチェックおよびダウンロード
@@ -170,7 +170,7 @@ noremap : ;
 " clipboard integration
 set clipboard+=unnamed
 " colorscheme
-colorscheme darkblue 
+colorscheme default 
 set backspace=indent,eol,start
 set tabstop=8
 set expandtab
