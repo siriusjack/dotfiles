@@ -1,12 +1,12 @@
-.vim/
+/*
+/.*
 
 !.emacs
 !.emacs.d
 !.tmux.conf
-!.zshrc
-!.zshrc.pre
-!.zshrc.post
-!.bashrc*
-!.tcshrc
+!.vimrc
+!.zsh*
+!.bash*
+!.tcsh*
 
 *.local
