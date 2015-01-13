@@ -14,5 +14,5 @@
 [url "https://"]
 	insteadOf = git://
 [ghq]
-	root = /Users/yoshihiro/.ghq
-        root = /Users/yoshihiro/.go/src
+	root = $HOME/ghq
+        root = $HOME/go/src
