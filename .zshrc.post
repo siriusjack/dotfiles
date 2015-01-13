@@ -1,2 +1,2 @@
 # tmux
-alias tmux='SHELL=`which zsh` env LD_LIBRARY_PATH=$HOME/source/tmux-1.9a/libevent-2.0.21-stable/build/lib $HOME/source/tmux-1.9a/build/bin/tmux'
+alias tmux='SHELL=`which zsh` tmux'

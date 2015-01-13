@@ -8,5 +8,8 @@
 !.zsh*
 !.bash*
 !.tcsh*
+!.zshrc*
+!.zshenv
+!.tcshrc
 
 *.local

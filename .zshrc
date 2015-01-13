@@ -86,3 +86,5 @@ export LANG=en_US.UTF-8
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+
+[[ -s $HOME/.zshrc.post ]] && source $HOME/.zshrc.post

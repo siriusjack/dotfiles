@@ -8,7 +8,6 @@ export PYTHONPATH=$HOME/py3:$PYTHONPATH
 export PYENV_ROOT=${HOME}/.pyenv
 if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
 
-
 # node
 export NODEBREW_ROOT=$HOME/.nodebrew
 export PATH=$NODEBREW_ROOT/current/bin:$PATH
