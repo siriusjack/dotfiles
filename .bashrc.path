@@ -2,14 +2,12 @@
 export PATH=$HOME/local/bin:/usr/local/bin:$HOME/bin:$PATH
 
 # python
-export PYTHONPATH=$HOME/Dropbox/py:$PYTHONPATH
+export PYTHONPATH=$HOME/py3:$PYTHONPATH
 
 # pyenv
 export PYENV_ROOT=${HOME}/.pyenv
-if [ -d ${PYENV_ROOT} ]; then
-	export PATH=${PYENV_ROOT}/bin:$PATH
-	eval "$(pyenv init -)"
-fi
+if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
+
 
 # node
 export NODEBREW_ROOT=$HOME/.nodebrew
