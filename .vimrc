@@ -155,12 +155,16 @@ filetype plugin indent on " Required!
 " NORMAL SETTINGS
 "******************************************************************************
 " 80行目にラインを引く
-":set colorcolumn=80
 hi ColorColumn guibg=#ffffff
 noremap <Plug>(ToggleColorColumn)
             \ :<c-u>let &colorcolumn = len(&colorcolumn) > 0 ? '' :
             \   join(range(81, 9999), ',')<CR>
 nmap cc <Plug>(ToggleColorColumn)
+
+" カーソルに縦線
+set cursorline
+set cursorcolumn
+nnoremap <Leader>c :<C-u>setlocal cursorline! cursorcolumn!<CR>
 
 " 入力モード龍に素早くjjを入力した場合にESC
 inoremap jj <Esc>
@@ -170,7 +174,7 @@ noremap : ;
 " clipboard integration
 set clipboard+=unnamed
 " colorscheme
-colorscheme default 
+colorscheme molokai
 set backspace=indent,eol,start
 set tabstop=8
 set expandtab
