@@ -1,0 +1,4 @@
+alias -s py=python
+alias -s txt=cat
+
+

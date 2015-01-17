@@ -6,6 +6,11 @@ augroup MyAutoCmd
 augroup END
 
 
+if &compatible
+    set nocompatible
+endif
+
+
 "****************************************************************************** 
 " NEO BUNDLE
 "****************************************************************************** 
@@ -106,8 +111,6 @@ else
     noremap <expr><silent> <C-c> quickrun#is_running() ? quickrun#sweep_sessions() : "\<C-c>"
     set splitbelow
     set splitright
-    NeoBundle 'alpaca-tc/alpaca_powertabline'
-    NeoBundle 'Lokaltog/vim-powerline'
 
 
     "Vimで正しくvirtualenvを処理できるようにする
@@ -160,6 +163,8 @@ noremap <Plug>(ToggleColorColumn)
             \ :<c-u>let &colorcolumn = len(&colorcolumn) > 0 ? '' :
             \   join(range(81, 9999), ',')<CR>
 nmap cc <Plug>(ToggleColorColumn)
+" 行番号を表示
+set number
 
 " カーソルに縦線
 set cursorline

@@ -1,6 +1,5 @@
 # loading
-[[ -s ~/.bashrc.alias ]] && source ~/.bashrc.alias
 [[ -s ~/.bashrc.path  ]] && source ~/.bashrc.path
-
-# tmux powerline
-export TMUX_POWERLINE_SEG_WEATHER_LOCATION="15015372"
+[[ -f ~/.bashrc.path.local ]] && source ~/.bashrc.path.local
+[[ -s ~/.bashrc.alias ]] && source ~/.bashrc.alias
+[[ -s ~/.bashrc.alias.local  ]] && source ~/.bashrc.alias.local
