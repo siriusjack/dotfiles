@@ -1,11 +1,8 @@
 Clone from github
-git clone git@github.com:yuroyoro/dotfiles.git
-
-ln -s dotfiles/.zshrc ~/.zshrc
+git clone git@github.com:siriusjack/dotfiles.git
 
 .dotfileの種類
 .vimrc
-.vim/
-.screenrc
+.tmux.conf
 .zshrc
 
