@@ -4,7 +4,6 @@ DOT_FILES=(\
 	.bashrc\
 	.bashrc.alias\
 	.bashrc.path\
-	.emacs.d\
 	.gitconfig\
 	.gitignore_global
 	.tmux.conf\
@@ -12,8 +11,10 @@ DOT_FILES=(\
 	.vimrc\
 	.pythonrc.py\
 	.gitignore_global\
-	.zshrc\
 	.zshenv\
+	.zshrc\
+	.zshrc.alias\
+	.zshrc.path\
 )
 
 for file in ${DOT_FILES[@]}
