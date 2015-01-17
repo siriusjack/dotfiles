@@ -10,8 +10,3 @@ case $HOSTNAME in
     *)
         ;;
 esac
-
-[ -z "$ls_library_path" ] && typeset -T LD_LIBRARY_PATH ld_library_path
-[ -z "$include" ] && typeset -T INCLUDE include
-[ -z "$pkg_config_path" ] && typeset -T PKG_CONFIG_PATH pkg_config_path
-typeset -U path cdpath fpath manpath ld_library_path include pkg_config_path
