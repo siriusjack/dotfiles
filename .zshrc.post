@@ -1,2 +1,0 @@
-# tmux
-alias tmux='SHELL=`which zsh` tmux'
