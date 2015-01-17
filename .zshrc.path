@@ -1,0 +1,15 @@
+# Auto completion
+# Homebrew の site-functions を追加
+if [ -d /usr/local/share/zsh/site-functions ]; then
+    fpath=(/usr/local/share/zsh/site-functions $fpath)
+fi
+
+# PATH 大文字/小文字のひも付け
+typeset -T LD_LIBRARY_PATH ld_library_path
+typeset -T INCLUDE include
+typeset -T CPATH cpath
+typeset -T PKG_CONFIG_PATH pkg_config_path
+
+# PATHの重複を削除
+typeset -U path cdpath fpath manpath
+typeset -U ld_library_path include pkg_config_path

@@ -54,14 +54,12 @@ plugins=(git)
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
-typeset -U path cdpat fpath manpath
 [[ -s $HOME/.bashrc ]] && source $HOME/.bashrc
 [[ -s $HOME/.zshrc.path ]] && source $HOME/.zshrc.path
-typeset -U path cdpath fpath manpath ld_library_path include pkg_config_path
 [[ -s $HOME/.zshrc.alias ]] && source $HOME/.zshrc.alias
 [[ -s $HOME/.zshrc.local ]] && source $HOME/.zshrc.local
 
-#export PATH="/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:${HOME}/bin"
+# export PATH="/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:${HOME}/bin"
 # export MANPATH="/usr/local/man:$MANPATH"
 
 # You may need to manually set your language environment
