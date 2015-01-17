@@ -2,7 +2,6 @@
 /.*
 
 !.emacs
-!.emacs.d
 !.tmux.conf
 !.vimrc
 !.zsh*
