@@ -1,6 +1,3 @@
-if [ -f $HOME/.zshrc.pre ]; then
-    source $HOME/.zshrc.pre
-fi
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
 
@@ -57,8 +54,13 @@ plugins=(git)
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
-typeset -U path cdpath fpath manpath
-source $HOME/.bashrc
+typeset -U path cdpat fpath manpath
+[[ -s $HOME/.bashrc ]] && source $HOME/.bashrc
+[[ -s $HOME/.zshrc.path ]] && source $HOME/.zshrc.path
+typeset -U path cdpath fpath manpath ld_library_path include pkg_config_path
+[[ -s $HOME/.zshrc.alias ]] && source $HOME/.zshrc.alias
+[[ -s $HOME/.zshrc.local ]] && source $HOME/.zshrc.local
+
 #export PATH="/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:${HOME}/bin"
 # export MANPATH="/usr/local/man:$MANPATH"
 
@@ -86,7 +88,3 @@ export LANG=en_US.UTF-8
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-
-[[ -s $HOME/.zshrc.local ]] && source $HOME/.zshrc.local
-[[ -s $HOME/.zshrc.alias ]] && source $HOME/.zshrc.alias
-[[ -s $HOME/.zshrc.post ]] && source $HOME/.zshrc.post
