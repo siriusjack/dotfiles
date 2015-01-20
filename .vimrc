@@ -38,31 +38,30 @@ else
     NeoBundle 'jmcantrell/vim-virtualenv'
 
     " neocomplete/Neocomplecache
-    " 入力補完機能を追加
-    if has('lua') && v:version >= 703
-        NeoBundleLazy "Shougo/neocomplete.vim", {
-                    \ "autoload": {
-                    \   "insert": 1,
-                    \ }}
-        " Use neocomplete.
+    NeoBundle has('lua') ? 'Shougo/neocomplete' : 'Shougo/neocomplcache'
+    if neobundle#is_installed('neocomplete')
+        " neocomplete用設定
         let g:neocomplete#enable_at_startup = 1
-        " Set min_keyword_length
-        let g:neocomplete#sources#syntax#min_keyword_length = 2
-        " Set s:hooks
-
-
-        let s:hooks = neobundle#get_hooks("neocomplete.vim")
-        function! s:hooks.on_source(bundle)
-            let g:acp_enableAtStartup = 0
-            " Use smatcase.
-            let g:neocomplet#enable_smart_case = 1
-        endfunction
-    else
-        NeoBundleLazy "Shougo/neocomplcache.vim", {
-                    \ "autoload": {
-                    \   "insert": 1,
-                    \ }}
+        let g:neocomplete#enable_ignore_case = 1
+        let g:neocomplete#enable_smart_case = 1
+        if !exists('g:neocomplete#keyword_patterns')
+            let g:neocomplete#keyword_patterns = {}
+        endif
+        let g:neocomplete#keyword_patterns._ = '\h\w*'
+    elseif neobundle#is_installed('neocomplcache')
+        " neocomplcache用設定
+        let g:neocomplcache_enable_at_startup = 1
+        let g:neocomplcache_enable_ignore_case = 1
+        let g:neocomplcache_enable_smart_case = 1
+        if !exists('g:neocomplcache_keyword_patterns')
+            let g:neocomplcache_keyword_patterns = {}
+        endif
+        let g:neocomplcache_keyword_patterns._ = '\h\w*'
+        let g:neocomplcache_enable_camel_case_completion = 1
+        let g:neocomplcache_enable_underbar_completion = 1
     endif
+    inoremap <expr><TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
+    inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<S-TAB>"
 
     " unite
     " vim pluginの統一的な環境を提供する
@@ -136,9 +135,8 @@ set number
 
 " カーソル行と列をハイライト
 set cursorline
-set cursorcolumn
 " \cでスイッチ
-nnoremap <Leader>c :<C-u>setlocal cursorline! cursorcolumn!<CR>
+nnoremap <Leader>c :<C-u>setlocal cursorcolumn!<CR>
 
 " 80行目にラインを引く
 hi ColorColumn guibg=#ffffff
