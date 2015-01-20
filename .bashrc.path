@@ -29,6 +29,9 @@ fi
 if [ -d $HOME/bin ]; then
     export PATH=$PATH:$HOME/bin
 fi
+if [ -s $HOME/bin ]; then
+    export PATH=$PATH:$HOME/bin
+fi
 
 # ----- Env Tools ----- 
 # pyenv
