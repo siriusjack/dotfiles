@@ -7,6 +7,26 @@ if [ -d /usr/local/share/zsh-completions ]; then
     fpath=(/usr/local/share/zsh-completions $fpath)
 fi
 
+case $HOSTNAME in
+    # if we are on laurel
+    ap-*)
+    export fpath=($HOME/local/share/zsh/5.0.7/functions $fpath)
+    export LD_LIBRARY_PATH=${HOME}/local/lib:$LD_LIBRARY_PATH
+    export INCLUDE=${HOME}/local/include:$INCLUDE
+    export PKG_CONFIG_PATH=/usr/lib/pkgconfig:$HOME/local/lib/pkgconfig
+    ;;
+
+    # if we are on camphor
+    "www21453ue.sakura.ne.jp")
+    export LD_LIBRARY_PATH=${HOME}/local/lib:$LD_LIBRARY_PATH
+    export INCLUDE=${HOME}/local/include:$INCLUDE
+    export PKG_CONFIG_PATH=$HOME/local/lib/pkgconfig:/usr/lib/pkgconfig
+    ;;
+
+    *)
+    ;;
+esac
+
 # PATH 大文字/小文字のひも付け
 typeset -T CPATH cpath
 [ -z "$ls_library_path" ] && typeset -T LD_LIBRARY_PATH ld_library_path
