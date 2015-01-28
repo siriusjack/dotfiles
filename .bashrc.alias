@@ -2,3 +2,9 @@
 alias ll='ls -l'
 alias la='ll -a'
 alias crontab='crontab -i'
+
+if [[ "$OSTYPE" == "darwin"* ]]; then
+    alias o='open'
+elif [[ "$OSTYPE" == "linux-gnu" ]]; then
+    alias o='gnome-open'
+fi

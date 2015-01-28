@@ -3,6 +3,9 @@
 if [ -d /usr/local/share/zsh/site-functions ]; then
     fpath=(/usr/local/share/zsh/site-functions $fpath)
 fi
+if [ -d /usr/local/share/zsh-completions ]; then
+    fpath=(/usr/local/share/zsh-completions $fpath)
+fi
 
 # PATH 大文字/小文字のひも付け
 typeset -T CPATH cpath
