@@ -1,8 +1,15 @@
 # global settings
 alias ll='ls -l'
 alias la='ll -a'
+
+# Crontab
 alias crontab='crontab -i'
 
+# Tmux 
+alias tm='tmux'
+alias tma='tmux -a'
+
+# Open command
 if [[ "$OSTYPE" == "darwin"* ]]; then
     alias o='open'
 elif [[ "$OSTYPE" == "linux-gnu" ]]; then
