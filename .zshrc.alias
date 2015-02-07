@@ -1,3 +1,16 @@
+# zsh
+# cdr, add-zsh-hook を有効にする
+autoload -Uz chpwd_recent_dirs cdr add-zsh-hook
+add-zsh-hook chpwd chpwd_recent_dirs
+ 
+# cdr の設定
+zstyle ':completion:*' recent-dirs-insert both
+zstyle ':chpwd:*' recent-dirs-max 500
+zstyle ':chpwd:*' recent-dirs-default true
+zstyle ':chpwd:*' recent-dirs-file "$HOME/.cache/shell/chpwd-recent-dirs"
+zstyle ':chpwd:*' recent-dirs-pushd true
+
+# file extentions
 alias -s py=python
 alias -s rb=ruby
 alias -s txt=cat
@@ -27,6 +40,17 @@ if [ -x "`which peco`" ]; then;
     }
     zle -N peco-kill-process
     bindkey '^xk' peco-kill-process #C-x k
+
+    function peco-cdr () {
+        local selected_dir=$(cdr -l | awk '{ print $2 }' | peco)
+        if [ -n "$selected_dir" ]; then
+            BUFFER="cd ${selected_dir}"
+            zle accept-line
+        fi
+        zle clear-screen
+    }
+    zle -N peco-cdr
+    bindkey '^xb' peco-cdr
 fi
 
 # ----- tmux -----
