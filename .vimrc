@@ -33,6 +33,10 @@ else
     " ヤンク履歴を管理 C-P/C-Nで履歴がぐるぐる回る
     NeoBundle 'vim-scripts/YankRing.vim'
 
+    " Surround
+    " http://vimblog.hatenablog.com/entry/vim_plugin_surround_vim
+    NeoBundle 'tpope/vim-surround'
+
     " vim-virtualenv
     " virtualenvを処理できるようにする
     NeoBundle 'jmcantrell/vim-virtualenv'
@@ -188,3 +192,15 @@ nnoremap <silent> <S-Down>  :5wincmd +<CR>
 " マウス使う
 set mouse=a "mouse on 
 set guioptions+=a
+
+
+"******************************************************************************
+" autocmd
+"******************************************************************************
+" 最後に閉じた場所から開く
+if has("autocmd")
+    autocmd BufReadPost *
+        \ if line("'\"") > 0 && line ("'\"") <= line("$") |
+        \   exe "normal! g'\"" |
+        \ endif
+endif
