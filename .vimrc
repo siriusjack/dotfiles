@@ -128,6 +128,7 @@ syntax on
 filetype on
 filetype plugin indent on " Required!
 
+set fileencodings=iso-2022-jp,euc-jp,sjis,utf-8
 " Edit vimrc
 noremap ,v :edit $MYVIMRC<CR>
 
@@ -138,7 +139,7 @@ colorscheme molokai
 set number
 
 " カーソル行と列をハイライト
-set cursorline
+#set cursorline
 " \cでスイッチ
 nnoremap <Leader>c :<C-u>setlocal cursorcolumn!<CR>
 
