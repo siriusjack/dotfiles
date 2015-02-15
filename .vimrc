@@ -139,7 +139,7 @@ colorscheme molokai
 set number
 
 " カーソル行と列をハイライト
-#set cursorline
+" set cursorline
 " \cでスイッチ
 nnoremap <Leader>c :<C-u>setlocal cursorcolumn!<CR>
 
