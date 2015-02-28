@@ -67,6 +67,9 @@ else
     inoremap <expr><TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
     inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<S-TAB>"
 
+    " javascript
+    NeoBundleLazy 'jelera/vim-javascript-syntax', {'autoload':{'filetypes':['javascript']}}
+
     " unite
     " vim pluginの統一的な環境を提供する
     NeoBundle "Shougo/unite.vim"
@@ -139,7 +142,7 @@ colorscheme molokai
 set number
 
 " カーソル行と列をハイライト
-#set cursorline
+" set cursorline
 " \cでスイッチ
 nnoremap <Leader>c :<C-u>setlocal cursorcolumn!<CR>
 
