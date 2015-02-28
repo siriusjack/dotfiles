@@ -1,18 +1,21 @@
 [user]
-	name = siriusjack
-	email = siriusjack@gmail.com
+    name = siriusjack
+    email = siriusjack@gmail.com
 [color]
-	ui = true
+    ui = true
 [core]
-	editor = /usr/bin/vim
-	excludesfile = ~/.gitignore_global
+    editor = /usr/bin/vim
+    excludesfile = ~/.gitignore_global
 [alias]
-	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
-	cm = commit -a
-	st = status
-	li = log --pretty=format:\"<%h> %ad [%an] %Cgreen%d%Creset %s\" --date=short
+    lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+    cm = commit
+    st = status
+    li = log --pretty=format:\"<%h> %ad [%an] %Cgreen%d%Creset %s\" --date=short
+    p = !git push origin `git rev-parse --abbrev-ref HEAD`
 [url "https://"]
-	insteadOf = git://
+    insteadOf = git://
 [ghq]
-	root = $HOME/ghq
-        root = $HOME/go/src
+    root = $HOME/ghq
+    root = $HOME/go/src
+[push]
+    default = simple
