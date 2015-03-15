@@ -1,3 +1,0 @@
-[submodule "errormarker.vim"]
-	path = errormarker.vim
-	url = ./errormarker.vim/
