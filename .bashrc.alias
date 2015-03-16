@@ -13,5 +13,6 @@ alias tma='tmux -a'
 if [[ "$OSTYPE" == "darwin"* ]]; then
     alias o='open'
 elif [[ "$OSTYPE" == "linux-gnu" ]]; then
+    alias open='gnome-open'
     alias o='gnome-open'
 fi
