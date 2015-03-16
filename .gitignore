@@ -1,7 +1,7 @@
 /*
 /.*
-!brew_setup.sh
-!setup.sh
+!setup_dotfiles.sh
+!setup_brew.sh
 !.emacs
 !.tmux.conf
 !.vimrc
