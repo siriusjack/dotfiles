@@ -10,6 +10,11 @@ if [ $uname = "Darwin" ]; then
     export PATH=/usr/local/bin:$HOME/bin:$PATH
 fi
 
+# python
+if [ -s $HOME/py3 ]; then
+    export PYTHONPATH=$HOME/py3:$PYTHONPATH
+fi
+
 # node
 export NODEBREW_ROOT=$HOME/.nodebrew
 export PATH=$NODEBREW_ROOT/current/bin:$PATH
