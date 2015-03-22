@@ -19,16 +19,14 @@ case $HOSTNAME in
     ;;
 esac
 
-#
+
 # PATH 大文字/小文字のひも付け
-#
 typeset -T CPATH cpath
 [ -z "$ls_library_path" ] && typeset -T LD_LIBRARY_PATH ld_library_path
 [ -z "$include" ] && typeset -T INCLUDE include
 [ -z "$pkg_config_path" ] && typeset -T PKG_CONFIG_PATH pkg_config_path
 
-#
+
 # PATHの重複を削除
-#
 typeset -U path cdpath fpath manpath
 typeset -U ld_library_path include pkg_config_path
