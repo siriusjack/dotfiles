@@ -18,3 +18,7 @@ _load_library $HOME/.bashrc.alias
 _load_library $ZDOTDIR/path.zsh
 _load_library $ZDOTDIR/completion.zsh
 _load_library $ZDOTDIR/aliases.zsh
+
+# plugins
+_load_library $ZDOTDIR/plugins/zsh-python-prompt/zshrc.zsh
+_load_library $ZDOTDIR/plugins/zsh-python-prompt.zsh
