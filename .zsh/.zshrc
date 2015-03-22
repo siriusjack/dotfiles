@@ -54,9 +54,8 @@ plugins=(git)
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
-[[ -s $HOME/.bashrc ]] && source $HOME/.bashrc
-[[ -s $HOME/.zshrc.path ]] && source $HOME/.zshrc.path
-[[ -s $HOME/.zshrc.alias ]] && source $HOME/.zshrc.alias
+
+source $ZDOTDIR/settings_loader.zsh
 
 # export PATH="/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:${HOME}/bin"
 # export MANPATH="/usr/local/man:$MANPATH"
