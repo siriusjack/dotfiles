@@ -1,8 +1,4 @@
 # .zshrc
-export LANG=en_US.UTF-8
-export EDITOR='vim'
-export SSH_KEY_PATH="~/.ssh/dsa_id"
-
 function _command_exists() {
     hash "$1" 2>/dev/null
 }
