@@ -14,6 +14,8 @@ zstyle ':chpwd:*' recent-dirs-pushd true
 alias -s py=python
 alias -s rb=ruby
 alias -s txt=cat
+alias -s pdb=/Applications/Avogadro.app/Contents/MacOS/Avogadro
+alias -s CONFIG=/Applications/Aten.app/Contents/MacOS/Aten
 
 
 # ----- tmux -----

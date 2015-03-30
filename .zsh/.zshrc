@@ -32,6 +32,7 @@ _load_library $ZDOTDIR/completion.zsh
 
 # aliases
 _load_library $ZDOTDIR/aliases.zsh
+_load_library $ZDOTDIR/aliases_local.zsh
 
 if _command_exists peco; then
 	_load_library $ZDOTDIR/aliases_peco.zsh
