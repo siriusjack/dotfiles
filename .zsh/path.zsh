@@ -1,10 +1,10 @@
 case $HOSTNAME in
     # laurel
     ap-*)
-    export fpath=($HOME/local/share/zsh/5.0.7/functions $fpath)
-    export LD_LIBRARY_PATH=${HOME}/local/lib:$LD_LIBRARY_PATH
-    export INCLUDE=${HOME}/local/include:$INCLUDE
-    export PKG_CONFIG_PATH=/usr/lib/pkgconfig:$HOME/local/lib/pkgconfig
+    #export fpath=($HOME/local/share/zsh/5.0.7/functions $fpath)
+    #export LD_LIBRARY_PATH=${HOME}/local/lib:$LD_LIBRARY_PATH
+    #export INCLUDE=${HOME}/local/include:$INCLUDE
+    #export PKG_CONFIG_PATH=/usr/lib/pkgconfig:$HOME/local/lib/pkgconfig
     ;;
 
     # camphor
