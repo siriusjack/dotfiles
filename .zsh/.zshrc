@@ -26,6 +26,7 @@ _load_library $HOME/.bashrc.alias
 
 # path
 _load_library $ZDOTDIR/path.zsh
+_load_library $ZDOTDIR/path_local.zsh
 
 # completion
 _load_library $ZDOTDIR/completion.zsh
