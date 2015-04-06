@@ -5,6 +5,7 @@
 !.emacs
 !.tmux.conf
 !.vimrc
+!.vim
 !.zsh*
 !.bash*
 !.tcsh*
