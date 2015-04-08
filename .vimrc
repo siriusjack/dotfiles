@@ -208,3 +208,6 @@ if has("autocmd")
         \   exe "normal! g'\"" |
         \ endif
 endif
+
+" その他設定
+runtime! config/*.vim
