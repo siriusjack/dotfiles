@@ -15,6 +15,12 @@ alias -s py=python
 alias -s rb=ruby
 alias -s txt=cat
 
+# Homebrew #
+alias b='brew'
+alias bs='brew -S'
+alias bi='brew info'
+alias bl='brew list'
+
 # ----- util -----
 function getpath() {
     pwd | tr -d '\n' | pbcopy
