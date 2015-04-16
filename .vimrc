@@ -42,8 +42,17 @@ else
     NeoBundle 'jmcantrell/vim-virtualenv'
 
     " neocomplete/Neocomplecache
-    NeoBundle has('lua') ? 'Shougo/neocomplete' : 'Shougo/neocomplcache'
-    if neobundle#is_installed('neocomplete')
+    function! s:meet_neocomplete_requirements()
+        return has('lua') && (v:version > 703 || (v:version == 703 && has('patch885')))
+    endfunction
+    if s:meet_neocomplete_requirements()
+        NeoBundle 'Shougo/neocomplete.vim'
+        NeoBundleFetch 'Shougo/neocomplcache.vim'
+    else
+        NeoBundleFetch 'Shougo/neocomplete.vim'
+        NeoBundle 'Shougo/neocomplcache.vim'
+    endif
+    if s:meet_neocomplete_requirements()
         " neocomplete用設定
         let g:neocomplete#enable_at_startup = 1
         let g:neocomplete#enable_ignore_case = 1
@@ -52,7 +61,7 @@ else
             let g:neocomplete#keyword_patterns = {}
         endif
         let g:neocomplete#keyword_patterns._ = '\h\w*'
-    elseif neobundle#is_installed('neocomplcache')
+    else
         " neocomplcache用設定
         let g:neocomplcache_enable_at_startup = 1
         let g:neocomplcache_enable_ignore_case = 1

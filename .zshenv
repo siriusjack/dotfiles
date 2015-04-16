@@ -1,7 +1,7 @@
 #
 # 基本設定
 #
-export LANG=ja_JP.UTF-8
+export LANG=en_US.UTF-8
 export EDITOR=vim
 export ZDOTDIR=$HOME/.zsh
 export PATH=/usr/local/bin:/usr/local/sbin:$PATH

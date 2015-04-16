@@ -25,6 +25,12 @@ alias bl='brew list'
 function getpath() {
     pwd | tr -d '\n' | pbcopy
 }
+function getdatetime() {
+    date +%Y-%m-%d\ %H.%M.%S | tr -d '\n' | pbcopy
+}
+function getdate() {
+    date +%Y-%m-%d | tr -d '\n' | pbcopy
+}
 
 # ----- tmux -----
 autoload -Uz add-zsh-hook
