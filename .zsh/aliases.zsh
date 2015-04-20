@@ -13,6 +13,7 @@ zstyle ':chpwd:*' recent-dirs-pushd true
 # file extentions
 alias -s py=python
 alias -s rb=ruby
+alias -s js=node
 alias -s txt=cat
 
 # Homebrew #
