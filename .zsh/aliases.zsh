@@ -1,4 +1,3 @@
-# zsh
 # cdr, add-zsh-hook を有効にする
 autoload -Uz chpwd_recent_dirs cdr add-zsh-hook
 add-zsh-hook chpwd chpwd_recent_dirs
@@ -16,7 +15,7 @@ alias -s rb=ruby
 alias -s js=node
 alias -s txt=cat
 
-# Homebrew #
+# ----- Homebrew -----
 alias b='brew'
 alias bs='brew -S'
 alias bi='brew info'
@@ -35,7 +34,6 @@ function getdate() {
 
 # ----- tmux -----
 autoload -Uz add-zsh-hook
-
 function rename_tmux_window() {
    if [ $TERM = "screen" ]; then
        local current_path=`pwd`
@@ -43,5 +41,4 @@ function rename_tmux_window() {
        tmux rename-window $current_dir
    fi
 }
-
 add-zsh-hook precmd rename_tmux_window

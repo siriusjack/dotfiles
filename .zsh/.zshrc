@@ -3,10 +3,6 @@ function _command_exists() {
     hash "$1" 2>/dev/null
 }
 
-function _load_if_command_exists() {
-	
-}
-
 function _load_library() {
     if [ -f $1 ]; then
         . $1
@@ -16,8 +12,10 @@ function _load_library() {
     fi
 }
 
-# oh-my-zsh
+# plugins
 _load_library $ZDOTDIR/plugins/oh-my-zsh.zsh
+_load_library $ZDOTDIR/plugins/zsh-python-prompt/zshrc.zsh
+_load_library $ZDOTDIR/plugins/zsh-python-prompt.zsh
 
 # legacy settings
 _load_library $HOME/.bashrc.path
@@ -25,20 +23,38 @@ _load_library $HOME/.bashrc.path.local
 _load_library $HOME/.bashrc.alias
 
 # path
-_load_library $ZDOTDIR/path.zsh
-_load_library $ZDOTDIR/path_local.zsh
-
-# completion
-_load_library $ZDOTDIR/completion.zsh
+_load_library $zdotdir/path.zsh
+_load_library $zdotdir/path_local.zsh
 
 # aliases
 _load_library $ZDOTDIR/aliases.zsh
 _load_library $ZDOTDIR/aliases_local.zsh
 
-if _command_exists peco; then
-	_load_library $ZDOTDIR/aliases_peco.zsh
-fi
+# completion
+_load_library $ZDOTDIR/completion.zsh
 
-# other plugins
-_load_library $ZDOTDIR/plugins/zsh-python-prompt/zshrc.zsh
-_load_library $ZDOTDIR/plugins/zsh-python-prompt.zsh
+
+#
+# Settings for tools
+#
+# peco
+if _command_exists peco; then 
+    _load_library $ZDOTDIR/peco.zsh
+fi
+# tmux
+if _command_exists tmux; then
+    _load_library $ZDOTDIR/tmux.zsh
+fi
+# env tools
+if _command_exists pyenv; then
+    export PATH=$HOME/.pyenv/shims/bin:$PATH
+    eval "$(pyenv init -)"
+fi
+if _command_exists rbenv; then
+    export PATH=$HOME/.rbenv/shims/bin:$PATH
+    eval "$(rbenv init -)"
+fi
+if _command_exists nodebrew; then 
+    export PATH=$HOME/.nodebrew/current/bin:$PATH
+fi
+typeset -U path PATH
