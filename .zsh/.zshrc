@@ -47,11 +47,9 @@ if _command_exists tmux; then
 fi
 # env tools
 if _command_exists pyenv; then
-    export PATH=$HOME/.pyenv/shims/bin:$PATH
     eval "$(pyenv init -)"
 fi
 if _command_exists rbenv; then
-    export PATH=$HOME/.rbenv/shims/bin:$PATH
     eval "$(rbenv init -)"
 fi
 if _command_exists nodebrew; then 
