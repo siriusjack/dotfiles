@@ -38,6 +38,9 @@ _load_library $ZDOTDIR/completion.zsh
 # Settings for tools
 #
 # peco
+if _command_exists rmtrash; then
+    _load_library $ZDOTDIR/rmtrash.zsh
+fi
 if _command_exists peco; then 
     _load_library $ZDOTDIR/peco.zsh
 fi

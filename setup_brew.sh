@@ -26,6 +26,7 @@ brew install pyenv
 brew install rbenv
 brew install nodebrew
 # misc
+brew instll rmtrash
 brew install tree
 
 #
