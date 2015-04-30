@@ -30,7 +30,6 @@ alias bl='brew list'
 function gpath() {
     pwd | tr -d '\n' | pbcopy
 }
-<<<<<<< HEAD
 function gdatetime() {
     date +%Y-%m-%d\ %H.%M.%S | tr -d '\n' | pbcopy
 }
