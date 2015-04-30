@@ -1,4 +1,7 @@
 # zsh
+# common settings
+alias l='ls -a'
+
 # cdr, add-zsh-hook を有効にする
 autoload -Uz chpwd_recent_dirs cdr add-zsh-hook
 add-zsh-hook chpwd chpwd_recent_dirs
@@ -16,13 +19,13 @@ alias -s rb=ruby
 alias -s txt=cat
 
 # ----- util -----
-function getpath() {
+function gpath() {
     pwd | tr -d '\n' | pbcopy
 }
-function getdatetime() {
+function gdatetime() {
     date +%Y-%m-%d\ %H.%M.%S | tr -d '\n' | pbcopy
 }
-function getdate() {
+function gdate() {
     date +%Y-%m-%d | tr -d '\n' | pbcopy
 }
 
