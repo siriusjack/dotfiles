@@ -2,11 +2,6 @@
 function _command_exists() {
     hash "$1" 2>/dev/null
 }
-
-function _load_if_command_exists() {
-	
-}
-
 function _load_library() {
     if [ -f $1 ]; then
         . $1
@@ -25,6 +20,12 @@ _load_library $HOME/.bashrc.path.local
 _load_library $HOME/.bashrc.alias
 
 # path
+if [ -d $HOME/bin ]; then
+    export PATH=$HOME/bin:$PATH
+fi
+if [ -d $HOME/local/bin ]; then
+    export PATH=$HOME/local/bin:$PATH
+fi
 _load_library $ZDOTDIR/path.zsh
 _load_library $ZDOTDIR/path_local.zsh
 
