@@ -20,6 +20,9 @@ brew install git
 brew install vim --with-lua
 # terminal multiplexer
 brew install tmux
+# docker
+brew install docker
+brew install boot2docker
 # misc
 brew install tree
 
