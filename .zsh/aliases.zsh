@@ -16,28 +16,27 @@ zstyle ':chpwd:*' recent-dirs-pushd true
 # file extentions
 alias -s py=python
 alias -s rb=ruby
+alias -s js=node
+alias -s hs=runghc
 alias -s txt=cat
+
+# ----- Homebrew -----
+alias b='brew'
+alias bs='brew -S'
+alias bi='brew info'
+alias bl='brew list'
 
 # ----- util -----
 function gpath() {
     pwd | tr -d '\n' | pbcopy
 }
+<<<<<<< HEAD
 function gdatetime() {
     date +%Y-%m-%d\ %H.%M.%S | tr -d '\n' | pbcopy
 }
 function gdate() {
     date +%Y-%m-%d | tr -d '\n' | pbcopy
 }
-
-# ----- tmux -----
-autoload -Uz add-zsh-hook
-
-function rename_tmux_window() {
-   if [ $TERM = "screen" ]; then
-       local current_path=`pwd`
-       local current_dir=`basename $current_path`
-       tmux rename-window $current_dir
-   fi
+function getdatetime() {
+    date +%Y-%m-%d\ %H.%M.%S | tr -d '\n' | pbcopy
 }
-
-add-zsh-hook precmd rename_tmux_window

@@ -8,11 +8,12 @@ fi
 brew doctor
 brew update
 
-# dev-tools
+#
+# cui tools
+# 
 brew install coreutils
 brew install findutils
 # shell
-brew install bash
 brew install zsh
 # vcs
 brew install git
@@ -23,11 +24,17 @@ brew install tmux
 # docker
 brew install docker
 brew install boot2docker
+# env tools
+brew install pyenv
+brew install rbenv
+brew install nodebrew
 # misc
+brew instll rmtrash
 brew install tree
 
-
+#
 # cask
+#
 brew install caskroom/cask/brew-cask
 # tweek
 brew cask install alfred
