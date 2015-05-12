@@ -65,6 +65,9 @@ fi
 if _command_exists pyenv; then
     eval "$(pyenv init -)"
 fi
+if _command_exists pyenv-virtualenv-init; then 
+    eval "$(pyenv virtualenv-init -)"
+fi
 if _command_exists rbenv; then
     eval "$(rbenv init -)"
 fi
