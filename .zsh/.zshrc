@@ -28,6 +28,11 @@ fi
 if [ -d $HOME/local/bin ]; then
     export PATH=$HOME/local/bin:$PATH
 fi
+# pyenv 
+if [ -d $HOME/.pyenv/shims ]; then
+    export PATH=$HOME/.pyenv/shims:$PATH
+fi
+
 _load_library $ZDOTDIR/path.zsh
 _load_library $ZDOTDIR/path_local.zsh
 
