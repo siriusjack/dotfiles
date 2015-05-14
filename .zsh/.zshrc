@@ -32,7 +32,12 @@ fi
 if [ -d $HOME/.pyenv/shims ]; then
     export PATH=$HOME/.pyenv/shims:$PATH
 fi
-
+if [ -d $HOME/.rbenv/shims ]; then
+    export PATH=$HOME/.rbenv/bin:$PATH
+fi
+if [ -d $HOME/.nodebrew/current/bin ]; then
+    export PATH=$HOME/.nodebrew/current/bin:$PATH
+fi
 _load_library $ZDOTDIR/path.zsh
 _load_library $ZDOTDIR/path_local.zsh
 
