@@ -1,17 +1,27 @@
+# ignore all
 /*
-/.*
+/*/
+
+# white list
 !setup_dotfiles.sh
 !setup_brew.sh
+!.bash*
 !.condarc
 !.emacs
-!.tmux.conf
-!.vimrc
-!.vim
-!.zsh*
-!.bash*
-!.tcsh*
-!.zshrc*
-!.zshenv
-!.tcshrc
 
-*.local
+!.ipython
+.ipython/*
+!.ipython/profile_default
+.ipython/profile_default/*
+!.ipython/profile_default/static
+.ipython/profile_default/static/*
+!.ipython/profile_default/static/custom
+
+!.tmux.conf
+!.vim
+!.vimrc
+!.tcsh*
+!.tcshrc
+!.zsh*
+!.zshenv
+!.zshrc*
