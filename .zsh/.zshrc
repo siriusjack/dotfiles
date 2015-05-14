@@ -22,11 +22,16 @@ _load_library $HOME/.bashrc.path.local
 _load_library $HOME/.bashrc.alias
 
 # path
+export PATH=/usr/local/bin:/usr/local/sbin:$PATH
+if [ -d $HOME/local/bin ]; then
+    export PATH=$HOME/local/bin:$PATH
+fi
 if [ -d $HOME/bin ]; then
     export PATH=$HOME/bin:$PATH
 fi
-if [ -d $HOME/local/bin ]; then
-    export PATH=$HOME/local/bin:$PATH
+if [ -s $HOME/py3 ]; then
+    export PYTHONPATH=$HOME/py3:$PYTHONPATH
+    export PATH=$HOME/py3/holy/bin:$PATH
 fi
 _load_library $ZDOTDIR/path.zsh
 _load_library $ZDOTDIR/path_local.zsh
