@@ -2,6 +2,7 @@
 /.*
 !setup_dotfiles.sh
 !setup_brew.sh
+!.condarc
 !.emacs
 !.tmux.conf
 !.vimrc

@@ -33,6 +33,16 @@ if [ -s $HOME/py3 ]; then
     export PYTHONPATH=$HOME/py3:$PYTHONPATH
     export PATH=$HOME/py3/holy/bin:$PATH
 fi
+# pyenv 
+if [ -d $HOME/.pyenv/shims ]; then
+    export PATH=$HOME/.pyenv/shims:$PATH
+fi
+if [ -d $HOME/.rbenv/shims ]; then
+    export PATH=$HOME/.rbenv/bin:$PATH
+fi
+if [ -d $HOME/.nodebrew/current/bin ]; then
+    export PATH=$HOME/.nodebrew/current/bin:$PATH
+fi
 _load_library $ZDOTDIR/path.zsh
 _load_library $ZDOTDIR/path_local.zsh
 
@@ -64,6 +74,9 @@ fi
 # env tools
 if _command_exists pyenv; then
     eval "$(pyenv init -)"
+fi
+if _command_exists pyenv-virtualenv-init; then 
+    eval "$(pyenv virtualenv-init -)"
 fi
 if _command_exists rbenv; then
     eval "$(rbenv init -)"
