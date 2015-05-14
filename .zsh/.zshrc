@@ -33,7 +33,7 @@ if [ -s $HOME/py3 ]; then
     export PYTHONPATH=$HOME/py3:$PYTHONPATH
     export PATH=$HOME/py3/holy/bin:$PATH
 fi
-# pyenv 
+# env 
 if [ -d $HOME/.pyenv/shims ]; then
     export PATH=$HOME/.pyenv/shims:$PATH
 fi
