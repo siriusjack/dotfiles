@@ -5,3 +5,7 @@ mainly to be overridden in profile/static/custom/custom.css
 
 This will always be an empty file in IPython
 */
+.CodeMirror {
+    font-family: "Migu 1M";
+    font-size: 16px;
+}
