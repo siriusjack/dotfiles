@@ -22,41 +22,25 @@ _load_library $HOME/.bashrc.path.local
 _load_library $HOME/.bashrc.alias
 
 # path
-export PATH=/usr/local/bin:/usr/local/sbin:$PATH
-if [ -d $HOME/local/bin ]; then
-    export PATH=$HOME/local/bin:$PATH
-fi
-if [ -d $HOME/bin ]; then
-    export PATH=$HOME/bin:$PATH
-fi
-if [ -s $HOME/py3 ]; then
-    export PYTHONPATH=$HOME/py3:$PYTHONPATH
-    export PATH=$HOME/py3/holy/bin:$PATH
-fi
 _load_library $ZDOTDIR/path.zsh
 _load_library $ZDOTDIR/path_local.zsh
-
-# other settings
 _load_library $ZDOTDIR/completion.zsh
+_load_library $ZDOTDIR/completion_local.zsh
 _load_library $ZDOTDIR/aliases.zsh
 _load_library $ZDOTDIR/aliases_local.zsh
 
-
 # Settings for specific tools
-# peco
 if _command_exists rmtrash; then
     _load_library $ZDOTDIR/rmtrash.zsh
 fi
 if _command_exists peco; then 
     _load_library $ZDOTDIR/peco.zsh
 fi
-# tmux
 if _command_exists tmux; then
     _load_library $ZDOTDIR/tmux.zsh
 fi
 
 # Settings for env tools
-# env path
 if [ -d $HOME/.pyenv/shims ]; then
     export PATH=$HOME/.pyenv/shims:$PATH
 fi
@@ -66,7 +50,7 @@ fi
 if [ -d $HOME/.nodebrew/current/bin ]; then
     export PATH=$HOME/.nodebrew/current/bin:$PATH
 fi
-# env init
+# init env tools
 if _command_exists pyenv; then
     eval "$(pyenv init -)"
 fi
