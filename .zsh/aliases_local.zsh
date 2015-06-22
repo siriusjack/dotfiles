@@ -4,4 +4,5 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
     alias avogadro=/Applications/Avogadro.app/Contents/MacOS/Avogadro
 else
     unalias rm
+    unalias cp
 fi
