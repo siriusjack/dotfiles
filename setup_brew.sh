@@ -21,9 +21,12 @@ brew install git
 brew install vim --with-lua
 # terminal multiplexer
 brew install tmux
+brew install reattach-to-user-namespace
 # docker
 brew install docker
 brew install boot2docker
+# network
+brew install openconnect
 # env tools
 brew install pyenv
 brew install rbenv
