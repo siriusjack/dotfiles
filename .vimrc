@@ -78,6 +78,9 @@ else
 
     " javascript
     NeoBundleLazy 'jelera/vim-javascript-syntax', {'autoload':{'filetypes':['javascript']}}
+    " Julia
+    " NeoBundleLazy 'JuliaLang/julia-vim', {'autoload':{'filetypes':['jl']}}
+    NeoBundle 'JuliaLang/julia-vim'
 
     " unite
     " vim pluginの統一的な環境を提供する
