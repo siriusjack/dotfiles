@@ -1,7 +1,8 @@
 # zsh
 # common settings
-alias l='ls -a'
+alias l='ls -lh'
 alias ll='ls -l'
+alias la='ls -lah'
 
 # cdr, add-zsh-hook を有効にする
 autoload -Uz chpwd_recent_dirs cdr add-zsh-hook

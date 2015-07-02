@@ -1,4 +1,8 @@
 # .zshrc
+
+# Profiling
+zmodload zsh/zprof && zprof
+
 function _command_exists() {
     hash "$1" 2>/dev/null
 }
@@ -64,3 +68,8 @@ if _command_exists nodebrew; then
     export PATH=$HOME/.nodebrew/current/bin:$PATH
 fi
 typeset -U path PATH
+
+# Profiling
+if (which zprof > /dev/null) ;then
+  zprof | less
+fi
