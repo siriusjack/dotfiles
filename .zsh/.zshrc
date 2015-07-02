@@ -1,8 +1,6 @@
 # .zshrc
-
 # Profiling
 zmodload zsh/zprof && zprof
-
 function _command_exists() {
     hash "$1" 2>/dev/null
 }
@@ -17,8 +15,8 @@ function _load_library() {
 
 # plugins
 _load_library $ZDOTDIR/plugins/oh-my-zsh.zsh
-_load_library $ZDOTDIR/plugins/zsh-python-prompt/zshrc.zsh
-_load_library $ZDOTDIR/plugins/zsh-python-prompt.zsh
+#_load_library $ZDOTDIR/plugins/zsh-python-prompt/zshrc.zsh
+#_load_library $ZDOTDIR/plugins/zsh-python-prompt.zsh
 
 # legacy settings
 _load_library $HOME/.bashrc.path
