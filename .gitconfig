@@ -4,7 +4,7 @@
 [color]
     ui = true
 [core]
-    editor = /usr/bin/vim
+    editor = vim -c "set fenc=utf-8"
     excludesfile = ~/dotfiles/.gitignore_global
 [alias]
     lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
@@ -19,3 +19,7 @@
     root = $HOME/go/src
 [push]
     default = simple
+[filter "lfs"]
+	clean = git lfs clean %f
+	smudge = git lfs smudge %f
+	required = true
