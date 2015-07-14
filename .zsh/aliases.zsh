@@ -1,5 +1,6 @@
 # zsh
 # common settings
+alias a='ls -l'
 alias l='ls -lh'
 alias ll='ls -l'
 alias la='ls -lah'
