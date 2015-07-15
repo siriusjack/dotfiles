@@ -43,6 +43,7 @@ PROMPT="[$p_uh $p_cd]
 $p_pr "
 
 # path
+_load_library $ZDOTDIR/rprompt.zsh
 _load_library $ZDOTDIR/path.zsh
 _load_library $ZDOTDIR/path_local.zsh
 _load_library $ZDOTDIR/completion.zsh
