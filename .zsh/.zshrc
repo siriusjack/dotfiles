@@ -49,6 +49,7 @@ _load_library $ZDOTDIR/completion.zsh
 _load_library $ZDOTDIR/completion_local.zsh
 _load_library $ZDOTDIR/aliases.zsh
 _load_library $ZDOTDIR/aliases_local.zsh
+_load_library $ZDOTDIR/history.zsh
 
 # Settings for specific tools
 if _command_exists rmtrash; then
