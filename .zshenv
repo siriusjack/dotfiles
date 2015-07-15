@@ -1,13 +1,11 @@
-#
 # 基本設定
-#
 export LANG=en_US.UTF-8
 export EDITOR=vim
 export ZDOTDIR=$HOME/.zsh
 export PATH=/usr/local/bin:/usr/local/sbin:$PATH
-#
+
+
 # ホスト別の設定(PATH, etc...)
-#
 case $HOSTNAME in
     # on laurel
     ap-*)
@@ -28,15 +26,19 @@ case $HOSTNAME in
         #export LANG=en_US.UTF-8
         ;;
 esac
-#
-# PATH 大文字/小文字のひも付け
-#
-typeset -T CPATH cpath
-[ -z "$ls_library_path" ] && typeset -T LD_LIBRARY_PATH ld_library_path
-[ -z "$include" ] && typeset -T INCLUDE include
-[ -z "$pkg_config_path" ] && typeset -T PKG_CONFIG_PATH pkg_config_path
-#
+
+
 # PATHの重複を削除
-# 
-typeset -U path cdpath fpath manpath
-typeset -U ld_library_path include pkg_config_path
+typeset -U path
+typeset -U cdpath
+typeset -U fpath
+typeset -U manpath
+# PATH 大文字/小文字ひも付け -> 重複削除
+[ -z "$cpath"]            && typeset -T CPATH cpath
+[ -z "$ls_library_path" ] && typeset -T LD_LIBRARY_PATH ld_library_path
+[ -z "$include" ]         && typeset -T INCLUDE include
+[ -z "$pkg_config_path" ] && typeset -T PKG_CONFIG_PATH pkg_config_path
+typeset -U cpath 
+typeset -U ld_library_path
+typeset -U include
+typeset -U pkg_config_path
