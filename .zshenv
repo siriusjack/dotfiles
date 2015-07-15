@@ -4,7 +4,6 @@ export EDITOR=vim
 export ZDOTDIR=$HOME/.zsh
 export PATH=/usr/local/bin:/usr/local/sbin:$PATH
 
-
 # ホスト別の設定(PATH, etc...)
 case $HOSTNAME in
     # on laurel

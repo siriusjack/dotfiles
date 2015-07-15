@@ -47,7 +47,7 @@ _load_library $ZDOTDIR/history.zsh
 # path
 _load_library $ZDOTDIR/path.zsh
 _load_library $ZDOTDIR/path_local.zsh
-_load_library $ZDOTDIR/env_tools.zsh
+_load_library $ZDOTDIR/envtools.zsh
 
 # optionals
 _load_library $ZDOTDIR/completion.zsh
