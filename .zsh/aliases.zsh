@@ -1,9 +1,19 @@
 # zsh
 # common settings
-alias a='ls -l'
-alias l='ls -lh'
-alias ll='ls -l'
-alias la='ls -lah'
+local uname=`uname`
+if [ $uname = 'Darwin' ]; then
+    alias ls='ls -G'
+    alias ll='ls -G -lh'
+    alias la='ls -G -lah'
+    alias l='ls -G -lh'
+    alias a='ls -G -lh'
+elif [$uname = 'Linux' ]; then
+   alias ls='ls --color' 
+   alias ll='ls --color -lh'
+   alias la='ls --color -lah'
+   alias a='ls --color -lh'
+   alias l='ls --color -lh'
+fi
 
 # cdr, add-zsh-hook を有効にする
 autoload -Uz chpwd_recent_dirs cdr add-zsh-hook

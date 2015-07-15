@@ -37,6 +37,18 @@ zle -N peco-cdr
 bindkey '^xb' peco-cdr
 
 
+function peco-cd () {
+    local selected_dir=$(ls -lhd */ | peco | awk '{print $9}')
+    if [ -n "$selected_dir" ]; then
+        BUFFER="cd ${selected_dir}"
+        zle accept-line
+    fi
+    zle clear-screen
+}
+zle -N peco-cd
+bindkey '^fe' peco-cd
+
+
 # git-ignore ruby
 function git-ignore() {
     curl -s https://www.gitignore.io/api/$@;

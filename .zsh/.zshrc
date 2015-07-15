@@ -1,27 +1,50 @@
 # .zshrc
 # Profiling
-zmodload zsh/zprof && zprof
+# zmodload zsh/zprof && zprof
+
+# utility functions
 function _command_exists() {
     hash "$1" 2>/dev/null
 }
 function _load_library() {
     if [ -f $1 ]; then
-        . $1
-    fi
-    if [ -s $1 ]; then
-    	. $1
+        source $1
+    elif [ -s $1 ]; then
+        source $1
     fi
 }
 
 # plugins
-_load_library $ZDOTDIR/plugins/oh-my-zsh.zsh
+#_load_library $ZDOTDIR/plugins/oh-my-zsh.zsh
 #_load_library $ZDOTDIR/plugins/zsh-python-prompt/zshrc.zsh
 #_load_library $ZDOTDIR/plugins/zsh-python-prompt.zsh
 
+setopt auto_cd
+setopt auto_pushd
+setopt correct
+setopt nobeep
+setopt nolistbeep
+bindkey -e
+
+# ls コマンドの色分け設定
+export LSCOLORS=gxBxhxDxfxhxhxhxhxcxcx
+export LS_COLORS='di=01;34:ln=01;35:so=01;32:ex=01;31:bd=46;34:cd=43;34:su=41;30:sg=46;30:tw=42;30:ow=43;30'
+# ls コマンドの色分け設定
+zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS} 
+# prompt
+# [user@host]
+local p_uh="%(?.%F{green}.%F{magenta})%n@%m%f${WINDOW+[$WINDOW]}"
+# current dir
+local p_cd="%F{cyan}%~%f"
+# prefix
+local p_pr="%(!,#,$)"
+PROMPT="[$p_uh $p_cd]
+$p_pr "
+
 # legacy settings
-_load_library $HOME/.bashrc.path
-_load_library $HOME/.bashrc.path.local
-_load_library $HOME/.bashrc.alias
+#_load_library $HOME/.bashrc.path
+#_load_library $HOME/.bashrc.path.local
+#_load_library $HOME/.bashrc.alias
 
 # path
 _load_library $ZDOTDIR/path.zsh
@@ -65,9 +88,10 @@ fi
 if _command_exists nodebrew; then 
     export PATH=$HOME/.nodebrew/current/bin:$PATH
 fi
+
 typeset -U path PATH
 
 # Profiling
-if (which zprof > /dev/null) ;then
-  zprof | less
-fi
+#if (which zprof > /dev/null) ;then
+#  zprof | less
+#fi
