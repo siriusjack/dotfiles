@@ -114,4 +114,4 @@ function cdup() {
    zle reset-prompt
 }
 zle -N cdup
-bindkey '^u' cdup
+bindkey '^g' cdup
