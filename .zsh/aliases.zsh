@@ -60,19 +60,17 @@ function ls_abbrev() {
     if [[ ! -r $PWD ]]; then
         return
     fi
-    # -a : Do not ignore entries starting with ..
     # -C : Force multi-column output.
     # -F : Append indicator (one of */=>@|) to entries.
     local cmd_ls='ls'
     local -a opt_ls
-    opt_ls=('-aCFl' '--color=always')
+    opt_ls=('-CFl' '--color')
     case "${OSTYPE}" in
         freebsd*|darwin*)
             if type gls > /dev/null 2>&1; then
                 cmd_ls='gls'
             else
-                # -G : Enable colorized output.
-                opt_ls=('-aCFGl')
+                opt_ls=('-CFl' '-G')
             fi
             ;;
     esac
