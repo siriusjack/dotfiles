@@ -8,7 +8,8 @@ if [ -d /usr/local/share/zsh-completions ]; then
 fi
 
 autoload -U compinit
-compinit
+compinit -u
+
 # colors
 export LS_COLORS='di=01;34:ln=01;35:so=01;32:ex=01;31:bd=46;34:cd=43;34:su=41;30:sg=46;30:tw=42;30:ow=43;30'
 zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS} 
@@ -21,5 +22,4 @@ zstyle ':completion:*' matcher-list '' \
 zstyle ':completion:*:default' menu select=2 
 zstyle ':completion:*' list-separator '-->'
 zstyle ':completion:*:manuals' separate-sections true
-
 typeset -U fpath FPATH
