@@ -76,12 +76,6 @@ else
     inoremap <expr><TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
     inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<S-TAB>"
 
-    " javascript
-    NeoBundleLazy 'jelera/vim-javascript-syntax', {'autoload':{'filetypes':['javascript']}}
-    " Julia
-    " NeoBundleLazy 'JuliaLang/julia-vim', {'autoload':{'filetypes':['jl']}}
-    NeoBundle 'JuliaLang/julia-vim'
-
     " unite
     " vim pluginの統一的な環境を提供する
     NeoBundle "Shougo/unite.vim"
@@ -93,11 +87,16 @@ else
     " vimfiler
     NeoBundle 'Shougo/vimfiler.vim'
     let g:vimfiler_as_default_explorer = 1
-    " unite系キーマッピング（少し邪道かも）
+    " unite
     nnoremap <silent> ,f :<C-u>UniteWithBufferDir -buffer-name=files file<CR>
     nnoremap <silent> ,b :<C-u>Unite buffer <CR>
     nnoremap <silent> ,c :<C-u>Unite colorscheme -auto-preview<CR>
 
+    " javascript
+    NeoBundleLazy 'jelera/vim-javascript-syntax', { 'autoload':{ 'filetypes':[ 'javascript' ] } }
+    " Julia
+    " NeoBundleLazy 'JuliaLang/julia-vim', { 'autoload':{ 'filetypes':['julia'] } }
+    NeoBundle 'JuliaLang/julia-vim'
 
     " vimproc
     " 非同期通信を可能にする
@@ -143,7 +142,7 @@ syntax on
 filetype on
 filetype plugin indent on " Required!
 
-set fileencodings=iso-2022-jp,euc-jp,sjis,utf-8
+set fileencodings=utf-8
 " Edit vimrc
 noremap ,v :edit $MYVIMRC<CR>
 
@@ -154,7 +153,7 @@ colorscheme molokai
 set number
 
 " カーソル行と列をハイライト
-" set cursorline
+set cursorline
 " \cでスイッチ
 nnoremap <Leader>c :<C-u>setlocal cursorcolumn!<CR>
 
