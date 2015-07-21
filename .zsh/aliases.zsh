@@ -64,13 +64,13 @@ function ls_abbrev() {
     # -F : Append indicator (one of */=>@|) to entries.
     local cmd_ls='ls'
     local -a opt_ls
-    opt_ls=('-CFl' '--color')
+    opt_ls=('-l' '--color')
     case "${OSTYPE}" in
         freebsd*|darwin*)
             if type gls > /dev/null 2>&1; then
                 cmd_ls='gls'
             else
-                opt_ls=('-CFl' '-G')
+                opt_ls=('-l' '-G')
             fi
             ;;
     esac
@@ -79,26 +79,28 @@ function ls_abbrev() {
     ls_result=$(CLICOLOR_FORCE=1 COLUMNS=$COLUMNS command $cmd_ls ${opt_ls[@]} | sed $'/^\e\[[0-9;]*m$/d')
 
     local ls_lines=$(echo "$ls_result" | wc -l | tr -d ' ')
+    local num_files=`ls -1 -A | wc -l | tr -d '\ '`
     if [ $ls_lines -gt 10 ]; then
         echo "$ls_result" | head -n 5
         echo '...'
         echo "$ls_result" | tail -n 5
-        echo "$(command ls -1 -A | wc -l | tr -d ' ') files exist"
     else
-        echo "$ls_result"
+        echo $ls_result
     fi
+    echo "$num_files files exist"
+    echo ""
 }
 function do_enter() {
     if [ -n "$BUFFER" ]; then
         zle accept-line
         return 0
     fi
-    echo
     ls_abbrev
     if [ "$(git rev-parse --is-inside-work-tree 2> /dev/null)" = 'true' ]; then
         echo
         echo -e "\e[0;33m--- git status ---\e[0m"
         git status -sb
+        echo ""
     fi
     zle reset-prompt
     return 0
