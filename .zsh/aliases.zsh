@@ -116,4 +116,4 @@ zle -N cdup
 
 # ----- key-binds -----
 bindkey '^m' do_enter
-bindkey '^g' cdup && do_enter
+bindkey '^b' cdup
