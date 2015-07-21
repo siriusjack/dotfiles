@@ -106,7 +106,6 @@ function do_enter() {
     return 0
 }
 zle -N do_enter
-bindkey '^m' do_enter
 
 function cdup() {
    echo
@@ -114,4 +113,7 @@ function cdup() {
    zle reset-prompt
 }
 zle -N cdup
-bindkey '^g' cdup
+
+# ----- key-binds -----
+bindkey '^m' do_enter
+bindkey '^g' cdup && do_enter
