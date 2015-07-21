@@ -56,6 +56,7 @@ function gdate() {
 function getdatetime() {
     date +%Y-%m-%d\ %H.%M.%S | tr -d '\n' | pbcopy
 }
+
 function ls_abbrev() {
     if [[ ! -r $PWD ]]; then
         return
@@ -77,9 +78,9 @@ function ls_abbrev() {
 
     local ls_result
     ls_result=$(CLICOLOR_FORCE=1 COLUMNS=$COLUMNS command $cmd_ls ${opt_ls[@]} | sed $'/^\e\[[0-9;]*m$/d')
-
     local ls_lines=$(echo "$ls_result" | wc -l | tr -d ' ')
     local num_files=`ls -1 -A | wc -l | tr -d '\ '`
+    echo ""
     if [ $ls_lines -gt 10 ]; then
         echo "$ls_result" | head -n 5
         echo '...'
@@ -106,3 +107,11 @@ function do_enter() {
 }
 zle -N do_enter
 bindkey '^m' do_enter
+
+function cdup() {
+   echo
+   cd ..
+   zle reset-prompt
+}
+zle -N cdup
+bindkey '^u' cdup
