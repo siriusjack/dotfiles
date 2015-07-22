@@ -1,5 +1,4 @@
 # .zsh/alias.zsh
-
 # cdr, add-zsh-hook を有効にする
 autoload -Uz chpwd_recent_dirs cdr add-zsh-hook
 add-zsh-hook chpwd chpwd_recent_dirs
@@ -15,18 +14,23 @@ zstyle ':chpwd:*' recent-dirs-pushd true
 local uname=`uname`
 alias k=tree
 if [ $uname = 'Darwin' ]; then
+    # ----- ls -----
     alias ls='ls -G'
     alias ll='ls -G -lh'
     alias la='ls -G -lah'
     alias l='ls -G -lh'
     alias a='ls -G -lh'
-    # ----  vim -----
+    # ----- vim -----
+    alias v=vim
     alias gvim=mvim
     # ----- Homebrew -----
     alias b='brew'
     alias bs='brew -S'
     alias bi='brew info'
     alias bl='brew list'
+    # ----- chem -----
+    alias aten=/Applications/Aten.app/Contents/MacOS/Aten
+    alias avogadro=/Applications/Avogadro.app/Contents/MacOS/Avogadro
 elif [ $uname = 'Linux' ]; then
    alias ls='ls --color' 
    alias ll='ls --color -lh'
@@ -41,7 +45,6 @@ alias -s rb=ruby
 alias -s js=node
 alias -s hs=runghc
 alias -s txt=cat
-
 
 # ----- util -----
 function gpath() {
