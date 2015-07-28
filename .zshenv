@@ -1,6 +1,7 @@
 # 基本設定
 export LANG=en_US.UTF-8
 export EDITOR=vim
+export LESSCHARSET=utf-8
 export ZDOTDIR=$HOME/.zsh
 export PATH=/usr/local/bin:/usr/local/sbin:$PATH
 
