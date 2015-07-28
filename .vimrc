@@ -142,7 +142,10 @@ syntax on
 filetype on
 filetype plugin indent on " Required!
 
+" using utf-8
+set encoding=utf-8
 set fileencodings=utf-8
+
 " Edit vimrc
 noremap ,v :edit $MYVIMRC<CR>
 
