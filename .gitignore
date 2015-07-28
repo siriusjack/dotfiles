@@ -17,6 +17,8 @@
 .ipython/profile_default/static/*
 !.ipython/profile_default/static/custom
 
+!.matplotlib
+
 !.tmux.conf
 !.vim
 !.vimrc
