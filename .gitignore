@@ -11,11 +11,18 @@
 
 !.ipython
 .ipython/*
+
 !.ipython/profile_default
 .ipython/profile_default/*
 !.ipython/profile_default/static
 .ipython/profile_default/static/*
 !.ipython/profile_default/static/custom
+
+!.ipython/profile_julia
+.ipython/profile_julia/*
+!.ipython/profile_julia/static
+.ipython/profile_julia/static/*
+!.ipython/profile_julia/static/custom
 
 !.matplotlib
 
