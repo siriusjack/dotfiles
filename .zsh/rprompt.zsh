@@ -81,12 +81,12 @@ function _update_vcs_info_msg() {
             vcs_info_color=red
             vcs_info_bold=true ;;
         *'-'*'?'*)
-            vcs_info_color=magenta
+            vcs_info_color=orange
             vcs_info_bold=true ;;
         *'+'*)
             vcs_info_color=red ;;
         *'-'*)
-            vcs_info_color=magenta ;;
+            vcs_info_color=orange ;;
         *'?'*)
             vcs_info_color=yellow ;;
         *)
