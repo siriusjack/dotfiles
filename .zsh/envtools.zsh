@@ -1,14 +1,24 @@
 # .zsh/env_tools.zsh
+local uname=`uname`
+
 # load path 
-if [ -d $HOME/.pyenv/shims ]; then
-    export PATH=$HOME/.pyenv/shims:$PATH
+if [ -d $HOME/.pyenv ]; then
+    if [ $uname != 'Darwin' ]; then
+        export PYENV_ROOT=$HOME/.pyenv
+        export PATH=$PYENV_ROOT/bin:$PATH
+    fi
 fi
-if [ -d $HOME/.rbenv/shims ]; then
-    export PATH=$HOME/.rbenv/bin:$PATH
+if [ -d $HOME/.rbenv ]; then
+    if [ $uname != 'Darwin' ]; then
+        export PATH=$HOME/.rbenv/bin:$PATH
+    fi
 fi
-if [ -d $HOME/.nodebrew/current/bin ]; then
-    export PATH=$HOME/.nodebrew/current/bin:$PATH
+if [ -d $HOME/.nodebrew ]; then
+    if [ $uname != 'Darwin' ]; then
+        export PATH=$HOME/.nodebrew/current/bin:$PATH
+    fi
 fi
+
 # init env tools
 if _command_exists pyenv; then
     eval "$(pyenv init -)"
@@ -18,8 +28,5 @@ if _command_exists pyenv-virtualenv-init; then
 fi
 if _command_exists rbenv; then
     eval "$(rbenv init -)"
-fi
-if _command_exists nodebrew; then 
-    export PATH=$HOME/.nodebrew/current/bin:$PATH
 fi
 #typeset -U path PATH
