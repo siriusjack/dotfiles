@@ -22,9 +22,9 @@ fi
 # init env tools
 if _command_exists pyenv; then
     eval "$(pyenv init -)"
-fi
-if _command_exists pyenv-virtualenv-init; then 
-    eval "$(pyenv virtualenv-init -)"
+    if [ -d $PYENV_ROOT/plugins/pyenv-virtualenv ]; then
+    	eval "$(pyenv virtualenv-init -)"
+    fi
 fi
 if _command_exists rbenv; then
     eval "$(rbenv init -)"
