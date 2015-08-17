@@ -5,12 +5,12 @@ DOT_FILES=(\
     .bashrc.alias\
     .bashrc.path\
     .gitconfig\
-    .gitignore_global
+    .gitignore_global\
     .tmux.conf\
     .vim\
     .vimrc\
     .pythonrc.py\
-    .gitignore_global\
+    .bundle\
     .zshenv\
     .zsh\
     )
