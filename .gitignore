@@ -29,6 +29,11 @@
 !.tmux.conf
 !.vim
 !.vimrc
+
+!.bundle
+.bundle/*
+!.bundle/config
+
 !.tcsh*
 !.tcshrc
 !.zsh*
