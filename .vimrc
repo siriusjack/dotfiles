@@ -150,7 +150,7 @@ set fileencodings=utf-8
 noremap ,v :edit $MYVIMRC<CR>
 
 " Colorscheme
-colorscheme molokai
+colorscheme default
 
 " 行番号を表示
 set number
