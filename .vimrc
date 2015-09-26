@@ -1,15 +1,23 @@
 "******************************************************************************
 " NORMAL SETTINGS
 "******************************************************************************
+if &compatible
+    set nocompatible
+endif
+" 256色モード
+set t_Co=256
 " Colorscheme
-colorscheme default
+colorscheme darkblue
 " using utf-8
 set encoding=utf-8
+scriptencoding utf-8
 set fileencodings=utf-8
 " 行番号を表示
 set number
 " ステータスラインを常に表示
 set laststatus=2
+" カーソル場所表示
+set ruler
 " 保存しなくてもファイルを切り替え
 set hidden
 " マウス使う
@@ -19,15 +27,13 @@ set guioptions+=a
 set clipboard+=unnamed
 " tab設定
 set backspace=indent,eol,start
-set tabstop=8
-set expandtab
-set shiftwidth=4
-set softtabstop=4
-set smarttab
-set autoindent
-set smartindent
+set autoindent smarttab smartindent "いい感じにインデント
+set expandtab "Tabを空白に展開
+set tabstop=8 "Tabを表示するときの表示上の空白数
+set shiftwidth=4 "インデントの空白の数
+set softtabstop=4 "Tabの空白の数
 set list
-set listchars=tab:.\ 
+set listchars=tab:.\
 " バックアップなし
 set nowritebackup
 set nobackup
