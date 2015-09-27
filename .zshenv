@@ -33,6 +33,7 @@ typeset -U path
 typeset -U cdpath
 typeset -U fpath
 typeset -U manpath
+typeset -U pkg_config_path
 # PATH 大文字/小文字ひも付け -> 重複削除
 [ -z "$cpath"]            && typeset -T CPATH cpath
 [ -z "$ls_library_path" ] && typeset -T LD_LIBRARY_PATH ld_library_path
