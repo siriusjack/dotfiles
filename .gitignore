@@ -5,10 +5,30 @@
 # white list
 !setup_dotfiles.sh
 !setup_brew.sh
-!.bash*
-!.condarc
-!.emacs
 
+# shell
+!.bash*
+!.tcsh*
+!.tcshrc
+!.zsh*
+!.zshenv
+!.zshrc*
+
+# editor
+!.emacs
+!.vim
+!.vimrc
+
+# multiplexer
+!.tmux.conf
+
+# ruby
+!.gemrc
+!.bundle
+.bundle/*
+!.bundle/config
+
+# python
 !.ipython
 .ipython/*
 
@@ -24,18 +44,5 @@
 .ipython/profile_julia/static/*
 !.ipython/profile_julia/static/custom
 
+!.condarc
 !.matplotlib
-
-!.tmux.conf
-!.vim
-!.vimrc
-
-!.bundle
-.bundle/*
-!.bundle/config
-
-!.tcsh*
-!.tcshrc
-!.zsh*
-!.zshenv
-!.zshrc*
