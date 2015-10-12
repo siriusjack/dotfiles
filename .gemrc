@@ -1,0 +1,3 @@
+# ri rdoc 生成を抑制
+install: --no-rdoc -no-ri
+update: --no-rdoc --no-ri
