@@ -8,11 +8,12 @@
     pager = less -r
     excludesfile = ~/dotfiles/.gitignore_global
 [alias]
-    lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+    co = checkout
     cm = commit
-    st = status
     li = log --pretty=format:\"<%h> %ad [%an] %Cgreen%d%Creset %s\" --date=short
+    lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
     p = !git push origin `git rev-parse --abbrev-ref HEAD`
+    st = status
 [url "https://"]
     insteadOf = git://
 [ghq]
