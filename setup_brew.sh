@@ -30,6 +30,7 @@ brew install openconnect
 # env tools
 brew install pyenv
 brew install rbenv
+brew install rbenv-gem-rehash
 brew install nodebrew
 # misc
 brew instll rmtrash
@@ -52,3 +53,4 @@ brew cask install virtualbox
 brew cask install vagrant
 # misc
 brew cask install google-chrome
+brew cask install evernote
