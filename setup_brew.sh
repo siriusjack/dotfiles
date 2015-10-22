@@ -29,6 +29,7 @@ brew install boot2docker
 brew install openconnect
 # env tools
 brew install pyenv
+brew install homebrew/boneyard/pyenv-pip-rehash
 brew install rbenv
 brew install rbenv-gem-rehash
 brew install nodebrew
