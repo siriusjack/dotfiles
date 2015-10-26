@@ -14,8 +14,10 @@ function _load_library() {
     fi
 }
 
-# basic settings
+#---  basic settings --- 
 setopt auto_cd
+# ignore duplicated history 
+setopt hist_ignore_dups
 # This make s cd=pushd
 setopt auto_pushd
 # Spell check comands (maybe annoying -> set no)
