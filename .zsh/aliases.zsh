@@ -13,6 +13,7 @@ zstyle ':chpwd:*' recent-dirs-pushd true
 # 単なるAlias
 local uname=`uname`
 alias k=tree
+alias g=git
 if [ $uname = 'Darwin' ]; then
     # ----- ls -----
     alias ls='ls -G'
