@@ -46,3 +46,11 @@
 
 !.condarc
 !.matplotlib
+
+# jupyter
+!.jupyter
+.jupyter/*
+!.jupyter/custom
+.jupyter/custom/*
+!.jupyter/custom/custom.css
+!.jupyter/custom/custom.js

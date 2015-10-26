@@ -8,6 +8,7 @@
     pager = less -r
     excludesfile = ~/dotfiles/.gitignore_global
 [alias]
+    br = branch
     co = checkout
     cm = commit
     li = log --pretty=format:\"<%h> %ad [%an] %Cgreen%d%Creset %s\" --date=short
