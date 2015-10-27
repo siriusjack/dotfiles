@@ -21,6 +21,8 @@ if [ $uname = 'Darwin' ]; then
     alias la='ls -G -lah'
     alias l='ls -G -lh'
     alias a='ls -G -lh'
+    # ----- open -----
+    alias o='open'
     # ----- vim -----
     alias v=vim
     alias gvim=mvim
