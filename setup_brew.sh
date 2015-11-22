@@ -52,6 +52,9 @@ brew cask install xquartz
 brew cask install sublime-text
 brew cask install virtualbox
 brew cask install vagrant
+# tex
+#brew cask install mactex
 # misc
 brew cask install google-chrome
 brew cask install evernote
+
