@@ -54,6 +54,9 @@ brew cask install virtualbox
 brew cask install vagrant
 # tex
 #brew cask install mactex
+#sudo tlmgr update --self --all
+# markdown
+brew cask install markright
 # misc
 brew cask install google-chrome
 brew cask install evernote
