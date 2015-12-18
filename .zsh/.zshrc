@@ -47,6 +47,25 @@ _load_library $ZDOTDIR/rprompt.zsh
 # history
 _load_library $ZDOTDIR/history.zsh
 
+# hostwise settings
+local host=`hostname`
+case $host in
+    mba* )
+        # mba
+        echo "mba"
+        ;;
+    mbp* )
+        # mbp
+        echo "mbp"
+        ;;
+    ap* )
+        # laurel
+        echo "laurel"
+        unalias cp
+        unalias mv
+        ;;
+esac
+
 # path
 _load_library $ZDOTDIR/path.zsh
 _load_library $ZDOTDIR/path_local.zsh
@@ -73,6 +92,7 @@ fi
 #_load_library $ZDOTDIR/plugins/oh-my-zsh.zsh
 #_load_library $ZDOTDIR/plugins/zsh-python-prompt/zshrc.zsh
 #_load_library $ZDOTDIR/plugins/zsh-python-prompt.zsh
+
 
 # Profiling
 # if (which zprof > /dev/null) ;then
