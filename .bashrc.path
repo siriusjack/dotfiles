@@ -4,34 +4,28 @@ function command_exists() {
     command -v "$1" &> /dev/null
 }
 
-# ----- Env -----
-# Homebrew
-if [ $uname = "Darwin" ]; then
-    export PATH=/usr/local/bin:$HOME/bin:$PATH
+# -----  user path -----
+if [ -d $home/local/bin ]; then
+    export path=$home/local/bin:$path
+fi
+if [ -d $home/bin ]; then
+    export path=$path:$home/bin
+fi
+if [ -s $home/bin ]; then
+    export path=$path:$home/bin
 fi
 
+# ----- Env -----
 # python
 if [ -s $HOME/py3 ]; then
     export PYTHONPATH=$HOME/py3:$PYTHONPATH
 fi
-
 # node
 export NODEBREW_ROOT=$HOME/.nodebrew
 export PATH=$NODEBREW_ROOT/current/bin:$PATH
 # Go
 export GOPATH=${HOME}/go 
 export PATH=$PATH:$GOPATH/bin
-
-# User Path
-if [ -d $HOME/local/bin ]; then
-    export PATH=$HOME/local/bin:$PATH
-fi
-if [ -d $HOME/bin ]; then
-    export PATH=$PATH:$HOME/bin
-fi
-if [ -s $HOME/bin ]; then
-    export PATH=$PATH:$HOME/bin
-fi
 
 # ----- Env Tools ----- 
 # pyenv
@@ -40,7 +34,6 @@ if command_exists pyenv; then
     export PATH=${PYENV_ROOT}/bin:$PATH
     eval "$(pyenv init -)";
 fi
-
 # rbenv
 if command_exists rbenv; then 
     eval "$(rbenv init -)";
