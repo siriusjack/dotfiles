@@ -14,7 +14,7 @@ function _load_library() {
     fi
 }
 
-#---  basic settings --- 
+# --- basic settings --- 
 setopt auto_cd
 # ignore duplicated history 
 setopt hist_ignore_dups
@@ -29,38 +29,25 @@ setopt nolistbeep
 bindkey -e
 # colors
 export LSCOLORS=gxBxhxDxfxhxhxhxhxcxcx
-
-# lprompt
-# [user@host]
-local p_uh="%(?.%F{green}.%F{magenta})%n@%m%f${WINDOW+[$WINDOW]}"
-# current dir
-local p_cd="%F{cyan}%~%f"
-# prefix
-local p_pr="%(!,#,$)"
-# prompt
-PROMPT="[$p_uh $p_cd]
-$p_pr "
-
+# lprompt 
+_load_library $ZDOTDIR/lprompt.zsh 
 # rprompt
 _load_library $ZDOTDIR/rprompt.zsh
-
 # history
 _load_library $ZDOTDIR/history.zsh
+# ---/basic settings --- 
 
 # hostwise settings
 local host=`hostname`
 case $host in
     mba* )
         # mba
-        echo "mba"
         ;;
     mbp* )
         # mbp
-        echo "mbp"
         ;;
     ap* )
         # laurel
-        echo "laurel"
         unalias cp
         unalias mv
         ;;
@@ -75,9 +62,8 @@ _load_library $ZDOTDIR/envtools.zsh
 _load_library $ZDOTDIR/completion.zsh
 _load_library $ZDOTDIR/completion_local.zsh
 _load_library $ZDOTDIR/aliases.zsh
-_load_library $ZDOTDIR/aliases_local.zsh
 
-# tool depended settings
+# toolwise settings
 if _command_exists rmtrash; then
     _load_library $ZDOTDIR/rmtrash.zsh
 fi
