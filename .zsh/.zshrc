@@ -50,6 +50,7 @@ case $host in
         # laurel
         unalias cp
         unalias mv
+        unalias rm
         ;;
 esac
 
