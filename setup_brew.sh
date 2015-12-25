@@ -36,6 +36,7 @@ brew install nodebrew
 # misc
 brew instll rmtrash
 brew install tree
+brew install ghq
 
 #
 # cask
