@@ -15,14 +15,12 @@
     lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
     p = !git push origin `git rev-parse --abbrev-ref HEAD`
     st = status
-[url "https://"]
-    insteadOf = git://
 [ghq]
-    root = $HOME/ghq
-    root = $HOME/go/src
+    root = $home/ghq
+    root = $home/go/src
 [push]
     default = simple
 [filter "lfs"]
-	clean = git lfs clean %f
-	smudge = git lfs smudge %f
-	required = true
+    clean = git lfs clean %f
+    smudge = git lfs smudge %f
+    required = true

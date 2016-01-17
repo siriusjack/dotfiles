@@ -1,23 +1,20 @@
-#!/bin/sh
+#!/bin/bash
 
 DOT_FILES=(\
-    .bashrc\
-    .bashrc.alias\
-    .bashrc.path\
+# git
     .gitconfig\
     .gitignore_global\
     .tmux.conf\
     .vim\
     .vimrc\
-    .pythonrc.py\
     .bundle\
     .zshenv\
     .zsh\
-    )
+)
 
 for file in ${DOT_FILES[@]}
 do
-    ln -s $HOME/dotfiles/$file $HOME/$file
+    ln -s ${HOME}/dotfiles/${file} ${HOME}/${file}
 done
 
 
