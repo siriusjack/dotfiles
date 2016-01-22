@@ -1,5 +1,6 @@
 # path.zsh
 export PATH=/usr/local/bin:/usr/local/sbin:$PATH
+
 # local
 if [ -d $HOME/local/bin ]; then
     export PATH=$HOME/local/bin:$PATH
