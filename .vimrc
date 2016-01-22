@@ -33,7 +33,7 @@ set tabstop=8 "Tabを表示するときの表示上の空白数
 set shiftwidth=4 "インデントの空白の数
 set softtabstop=4 "Tabの空白の数
 set list
-set listchars=tab:.\
+set listchars=tab:./
 " バックアップなし
 set nowritebackup
 set nobackup
