@@ -51,6 +51,8 @@ case $host in
         unalias cp
         unalias mv
         unalias rm
+        alias open='gnome-open'
+        alias o='open'
         ;;
 esac
 
