@@ -51,7 +51,7 @@ alias -s txt=cat
 
 # ----- util -----
 function gpath() {
-    pwd | tr -d '\n' | pbcopy
+    echo ${PWD/#$HOME/\~} | tr -d '\n' | pbcopy
 }
 function gdatetime() {
     date +%Y-%m-%d\ %H.%M.%S | tr -d '\n' | pbcopy
@@ -120,6 +120,8 @@ function cdup() {
 }
 zle -N cdup
 
+
 # ----- key-binds -----
 bindkey '^m' do_enter
 bindkey '^b' cdup
+bindkey '^J' self-insert
