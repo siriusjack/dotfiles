@@ -18,8 +18,11 @@ function _load_library() {
 setopt auto_cd
 # ignore duplicated history 
 setopt hist_ignore_dups
-# This make s cd=pushd
+# This makes cd=pushd
 setopt auto_pushd
+# activate zmv
+autoload -Uz zmv
+alias zmv='noglob zmv -W'
 # Spell check comands (maybe annoying -> set no)
 setopt nocorrect
 # Suppress beeps (annnoying)
