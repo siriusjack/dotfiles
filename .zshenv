@@ -1,12 +1,13 @@
-# 基本設定
+# Basic settings
 export LANG=en_US.UTF-8
 export EDITOR=vim
 export LESSCHARSET=utf-8
 export ZDOTDIR=$HOME/.zsh
 export PATH=/usr/local/bin:/usr/local/sbin:$PATH
 
-# ホスト別の設定(PATH, etc...)
-case $HOSTNAME in
+local hostname=`hostname`
+
+case $hostname in
     # on laurel
     ap-*)
         fpath=($HOME/local/share/zsh/5.0.7/functions $fpath)
@@ -20,21 +21,25 @@ case $HOSTNAME in
         INCLUDE=${HOME}/local/include:$INCLUDE
         PKG_CONFIG_PATH=$HOME/local/lib/pkgconfig:/usr/lib/pkgconfig
     ;;
+    # on es16
+    "es16")
+        export LD_LIBRARY_PATH=${HOME}/.local/lib:$LD_LIBRARY_PATH
+        export INCLUDE=${HOME}/.local/include:$INCLUDE
+        export PKG_CONFIG_PATH=$HOME/.local/lib/pkgconfig:/usr/lib/pkgconfig
+    ;;
     # on else
     *)
-        #export LC_ALL=en_US.UTF-8
-        #export LANG=en_US.UTF-8
-        ;;
+    ;;
 esac
 
 
-# PATHの重複を削除
+# PATH
 typeset -U path
 typeset -U cdpath
 typeset -U fpath
 typeset -U manpath
 typeset -U pkg_config_path
-# PATH 大文字/小文字ひも付け -> 重複削除
+# PATH
 [ -z "$cpath"]            && typeset -T CPATH cpath
 [ -z "$ls_library_path" ] && typeset -T LD_LIBRARY_PATH ld_library_path
 [ -z "$include" ]         && typeset -T INCLUDE include
