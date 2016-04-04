@@ -8,6 +8,10 @@ export PATH=/usr/local/bin:/usr/local/sbin:$PATH
 local hostname=`hostname`
 
 case $hostname in
+    # on macbook
+    mb*)
+    fpath=(/usr/local/share/zsh-completions $fpath)
+    ;;
     # on laurel
     ap-*)
         fpath=($HOME/local/share/zsh/5.0.7/functions $fpath)
