@@ -14,6 +14,9 @@ zstyle ':chpwd:*' recent-dirs-pushd true
 local uname=`uname`
 alias k=tree
 alias g=git
+alias gp='git push'
+alias gc='git cm'
+alias ga='git add'
 if [ $uname = 'Darwin' ]; then
     # ----- ls -----
     alias ls='ls -G'
