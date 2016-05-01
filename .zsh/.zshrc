@@ -1,11 +1,17 @@
 # .zsh/.zshrc
-# profiling
+# # profiling
 # zmodload zsh/zprof && zprof
+
+# zplug plugins
+source ~/.zplug/init.zsh
+zplug "felixr/docker-zsh-completion"
+zplug load --verbose
 
 # utility functions
 function _command_exists() {
     hash "$1" 2>/dev/null
 }
+
 function _load_library() {
     if [ -f $1 ]; then
         source $1
@@ -40,25 +46,6 @@ _load_library $ZDOTDIR/rprompt.zsh
 _load_library $ZDOTDIR/history.zsh
 # ---/basic settings --- 
 
-# hostwise settings
-local host=`hostname`
-case $host in
-    mba* )
-        # mba
-        ;;
-    mbp* )
-        # mbp
-        ;;
-    ap* )
-        # laurel
-        unalias cp
-        unalias mv
-        unalias rm
-        alias open='gnome-open'
-        alias o='open'
-        ;;
-esac
-
 # path
 _load_library $ZDOTDIR/path.zsh
 _load_library $ZDOTDIR/path_local.zsh
@@ -79,12 +66,6 @@ fi
 if _command_exists tmux; then
     _load_library $ZDOTDIR/tmux.zsh
 fi
-
-# plugins
-#_load_library $ZDOTDIR/plugins/oh-my-zsh.zsh
-#_load_library $ZDOTDIR/plugins/zsh-python-prompt/zshrc.zsh
-#_load_library $ZDOTDIR/plugins/zsh-python-prompt.zsh
-
 
 # Profiling
 # if (which zprof > /dev/null) ;then
