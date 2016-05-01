@@ -5,12 +5,12 @@ export LESSCHARSET=utf-8
 export ZDOTDIR=$HOME/.zsh
 export PATH=/usr/local/bin:/usr/local/sbin:$PATH
 
+# Hostwise settings
 local hostname=`hostname`
-
 case $hostname in
     # on macbook
     mb*)
-    fpath=(/usr/local/share/zsh-completions $fpath)
+        fpath=(/usr/local/share/zsh-completions $fpath)
     ;;
     # on laurel
     ap-*)
@@ -18,7 +18,7 @@ case $hostname in
         LD_LIBRARY_PATH=$HOME/local/lib:$LD_LIBRARY_PATH
         INCLUDE=${HOME}/local/include:$INCLUDE
         PKG_CONFIG_PATH=/usr/lib/pkgconfig:$HOME/local/lib/pkgconfig
-        ;;
+    ;;
     # on camphor
     "www21453ue.sakura.ne.jp")
         LD_LIBRARY_PATH=$HOME/local/lib:$LD_LIBRARY_PATH
