@@ -1,6 +1,10 @@
 # ignore all
 /*
 /*/
+/.*/
+/.*/.*
+*.swp
+*.log
 
 # white list
 !setup_dotfiles.sh
@@ -54,5 +58,3 @@
 .jupyter/custom/*
 !.jupyter/custom/custom.css
 !.jupyter/custom/custom.js
-*.swp
-*.log
