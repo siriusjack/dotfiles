@@ -2,10 +2,6 @@
 # # profiling
 # zmodload zsh/zprof && zprof
 
-# zplug plugins
-source ~/.zplug/init.zsh
-zplug "felixr/docker-zsh-completion"
-zplug load --verbose
 
 # utility functions
 function _command_exists() {
@@ -19,6 +15,13 @@ function _load_library() {
         source $1
     fi
 }
+
+# zplug plugins
+if [ -f ${HOME}/.zplug/innit.zsh ]; then
+    source ~/.zplug/init.zsh
+    zplug "felixr/docker-zsh-completion"
+    zplug load --verbose
+fi
 
 # --- basic settings --- 
 setopt auto_cd
