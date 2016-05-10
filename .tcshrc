@@ -1,6 +1,8 @@
 setenv LD_LIBRARY_PATH ${HOME}/local/lib:${LD_LIBRARY_PATH}
 setenv INCLUDE ${HOME}/local/include:${INCLUDE}
 setenv PATH ${HOME}/local/bin:${HOME}/bin:${PATH}
+setenv FPATH ${HOME}/local/share/zsh/5.2/functions:${FPATH}
+setenv ZDOTDIR ${HOME}/.zsh
 
 alias ls 'ls -l --color=auto'
 alias tmux 'env SHELL=`which zsh` tmux'
