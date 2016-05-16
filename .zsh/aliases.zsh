@@ -10,7 +10,18 @@ zstyle ':chpwd:*' recent-dirs-default true
 zstyle ':chpwd:*' recent-dirs-file "$HOME/.cache/shell/chpwd-recent-dirs"
 zstyle ':chpwd:*' recent-dirs-pushd true
 
-# 単なるAlias
+# hostwise settings
+local hostname=`hostname`
+case $hostname in 
+    ap-*)
+        unalias rm
+        unalias cp
+        unalias mv
+        ;;
+    *)
+esac
+
+# os wise settings
 local uname=`uname`
 alias k=tree
 alias g=git
@@ -38,11 +49,13 @@ if [ $uname = 'Darwin' ]; then
     alias aten=/Applications/Aten.app/Contents/MacOS/Aten
     alias avogadro=/Applications/Avogadro.app/Contents/MacOS/Avogadro
 elif [ $uname = 'Linux' ]; then
-   alias ls='ls --color' 
-   alias ll='ls --color -lh'
-   alias la='ls --color -lah'
-   alias a='ls --color -lh'
-   alias l='ls --color -lh'
+    alias ls='ls --color' 
+    alias ll='ls --color -lh'
+    alias la='ls --color -lah'
+    alias a='ls --color -lh'
+    alias l='ls --color -lh'
+    alias open='nautilus'
+    alias o='open'
 fi
 
 # file extentions
