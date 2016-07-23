@@ -9,36 +9,6 @@ brew doctor
 brew update
 
 #
-# cui tools
-# 
-brew install coreutils
-brew install findutils
-# shell
-brew install zsh
-# vcs
-brew install git
-# editor
-brew install vim --with-lua
-# terminal multiplexer
-brew install tmux
-brew install reattach-to-user-namespace
-# docker
-brew install docker
-brew install boot2docker
-# network
-brew install openconnect
-# env tools
-brew install pyenv
-brew install homebrew/boneyard/pyenv-pip-rehash
-brew install rbenv
-brew install rbenv-gem-rehash
-brew install nodebrew
-# misc
-brew instll rmtrash
-brew install tree
-brew install ghq
-
-#
 # cask
 #
 brew install caskroom/cask/brew-cask
@@ -61,4 +31,48 @@ brew cask install markright
 # misc
 brew cask install google-chrome
 brew cask install evernote
+
+#
+# cui tools
+# 
+brew install coreutils
+brew install findutils
+# shell
+brew install zsh
+# vcs
+brew install git
+# editor
+brew install vim --with-lua
+# terminal multiplexer
+brew install tmux
+brew install reattach-to-user-namespace
+# docker
+brew cask install virtualbox
+brew install docker
+brew install docker-machine
+brew cask install dockertoolbox
+# network
+brew install openconnect
+# env tools
+brew install pyenv
+brew install homebrew/boneyard/pyenv-pip-rehash
+brew install rbenv
+brew install rbenv-gem-rehash
+brew install nodebrew
+# misc
+brew instll rmtrash
+brew install tree
+brew install ghq
+# network
+brew install openconnect
+# env tools
+brew install pyenv
+brew install homebrew/boneyard/pyenv-pip-rehash
+brew install rbenv
+brew install rbenv-gem-rehash
+brew install nodebrew
+# misc
+brew instll rmtrash
+brew install tree
+brew install ghq
 
