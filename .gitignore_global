@@ -2,6 +2,7 @@
 *.swp
 *~
 tags
+.idea
 #### git で管理するファイルリスト ####
 !.gitignore
 !.gitignore_global
