@@ -1,69 +1,16 @@
 # .zsh/alias.zsh
-# cdr, add-zsh-hook を有効にする
-autoload -Uz chpwd_recent_dirs cdr add-zsh-hook
-add-zsh-hook chpwd chpwd_recent_dirs
- 
-# cdr の設定
-zstyle ':completion:*' recent-dirs-insert both
-zstyle ':chpwd:*' recent-dirs-max 500
-zstyle ':chpwd:*' recent-dirs-default true
-zstyle ':chpwd:*' recent-dirs-file "$HOME/.cache/shell/chpwd-recent-dirs"
-zstyle ':chpwd:*' recent-dirs-pushd true
-
-# hostwise settings
-local hostname=`hostname`
-case $hostname in 
-    ap-*)
-        unalias rm
-        unalias cp
-        unalias mv
-        ;;
-    *)
-esac
-
-# os wise settings
-local uname=`uname`
-alias k=tree
-alias g=git
-alias gp='git push'
-alias gc='git cm'
-alias ga='git add'
-if [ $uname = 'Darwin' ]; then
-    # ----- ls -----
-    alias ls='ls -G'
-    alias ll='ls -G -lh'
-    alias la='ls -G -lah'
-    alias l='ls -G -lh'
-    alias a='ls -G -a'
-    # ----- open -----
-    alias o='open'
-    # ----- vim -----
-    alias v=vim
-    alias gvim=mvim
-    # ----- Homebrew -----
-    alias b='brew'
-    alias bs='brew -S'
-    alias bi='brew info'
-    alias bl='brew list'
-    # ----- chem -----
-    alias aten=/Applications/Aten.app/Contents/MacOS/Aten
-    alias avogadro=/Applications/Avogadro.app/Contents/MacOS/Avogadro
-elif [ $uname = 'Linux' ]; then
-    alias ls='ls --color' 
-    alias ll='ls --color -lh'
-    alias la='ls --color -lah'
-    alias a='ls --color -lh'
-    alias l='ls --color -lh'
-    alias open='nautilus'
-    alias o='open'
-fi
-
-# file extentions
+# ----- extentions -----
 alias -s py=python
 alias -s rb=ruby
 alias -s js=node
 alias -s hs=runghc
 alias -s txt=cat
+
+# ----- git -----
+alias g=git
+alias gp='git push'
+alias gc='git cm'
+alias ga='git add'
 
 # ----- util -----
 function gpath() {
@@ -74,9 +21,6 @@ function gdatetime() {
 }
 function gdate() {
     date +%Y-%m-%d | tr -d '\n' | pbcopy
-}
-function getdatetime() {
-    date +%Y-%m-%d\ %H.%M.%S | tr -d '\n' | pbcopy
 }
 
 function ls_abbrev() {
@@ -113,6 +57,7 @@ function ls_abbrev() {
     echo "$num_files files exist"
     echo ""
 }
+
 function do_enter() {
     if [ -n "$BUFFER" ]; then
         zle accept-line
@@ -136,8 +81,46 @@ function cdup() {
 }
 zle -N cdup
 
-
 # ----- key-binds -----
 bindkey '^m' do_enter
 bindkey '^b' cdup
 bindkey '^J' self-insert
+
+
+# hostwise settings
+local hostname=`hostname`
+case $hostname in 
+    ap-*)
+        unalias rm
+        unalias cp
+        unalias mv
+        ;;
+    *)
+esac
+
+# os wise settings
+local uname=`uname`
+if [ $uname = 'Darwin' ]; then
+    # ----- ls -----
+    alias ls='ls -G'
+    alias ll='ls -G -lh'
+    alias la='ls -G -lah'
+    alias l='ls -G -lh'
+    alias a='ls -G -a'
+    # ----- open -----
+    alias o='open'
+    # ----- vim -----
+    alias v=vim
+    alias gvim=mvim
+    # ----- chem -----
+    alias aten=/Applications/Aten.app/Contents/MacOS/Aten
+    alias avogadro=/Applications/Avogadro.app/Contents/MacOS/Avogadro
+elif [ $uname = 'Linux' ]; then
+    alias ls='ls --color' 
+    alias ll='ls --color -lh'
+    alias la='ls --color -lah'
+    alias a='ls --color -lh'
+    alias l='ls --color -lh'
+    alias open='nautilus'
+    alias o='open'
+fi
