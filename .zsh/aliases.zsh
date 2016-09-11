@@ -1,4 +1,6 @@
 # .zsh/alias.zsh
+if _command_exists nvim ; then alias vim=nvim ; fi
+
 # ----- extentions -----
 alias -s py=python
 alias -s rb=ruby

@@ -14,4 +14,4 @@ fi
 
 setopt hist_ignore_dups
 setopt share_history
-bindkey '^R' history-incremental-search-backward
+#bindkey '^R' history-incremental-search-backward
