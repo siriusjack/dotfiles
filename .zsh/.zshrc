@@ -46,7 +46,8 @@ if [ -f ${ZDOTDIR:-HOME}/.zplug/init.zsh -o -s ${ZDOTDIR:-HOME}/.zplug/init.zsh 
     #zplug "sorin-ionescu/prezto", \
     #     use:init.zsh, \
     #     hook-build:"ln -s $ZPLUG_HOME/repos/sorin-ionescu/prezto $ZDOTDIR/.zprezto"
-    zplug "felixr/docker-zsh-completion"
+    #plug "felixr/docker-zsh-completion"
+    zplug "zsh-users/zsh-completions"
     zplug "zsh-users/zsh-syntax-highlighting", nice:10
     zplug load --verbose
 fi
