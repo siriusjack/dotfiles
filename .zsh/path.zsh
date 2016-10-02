@@ -6,6 +6,11 @@ fi
 if [ -d $HOME/bin ]; then
     export PATH=$HOME/bin:$PATH
 fi
+# GOPATH
+if [ -d $HOME/go ]; then
+    export GOPATH=$HOME/go
+    export PATH=$GOPATH/bin:$PATH
+fi
 #typeset -U path PATH
 
 # ----- ENV TOOLS ----- 
