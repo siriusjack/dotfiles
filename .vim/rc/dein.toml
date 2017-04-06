@@ -29,3 +29,6 @@ repo = 'raichoo/haskell-vim'
 
 #[[plugings]]
 #repo = 'dag/vim2hs'
+
+[[plugins]]
+repo = 'elzr/vim-json'
