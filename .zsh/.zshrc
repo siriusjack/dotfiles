@@ -39,9 +39,9 @@ _load_library $ZDOTDIR/aliases.zsh
 # ---/basic settings --- 
 
 # zplug
-if [ -f ${ZDOTDIR:-HOME}/.zplug/init.zsh -o -s ${ZDOTDIR:-HOME}/.zplug/init.zsh ]; then
+if [ -f ${HOME}/.zplug/init.zsh -o -s ${ZDOTDIR:-HOME}/.zplug/init.zsh ]; then
     # source init
-    source ${ZDOTDIR:-HOME}/.zplug/init.zsh
+    source ${HOME}/.zplug/init.zsh
     #zplug "b4b4r07/zplug" # self && zplug update
     #zplug "sorin-ionescu/prezto", \
     #     use:init.zsh, \
