@@ -49,6 +49,7 @@ if [ -f ${HOME}/.zplug/init.zsh -o -s ${ZDOTDIR:-HOME}/.zplug/init.zsh ]; then
     #plug "felixr/docker-zsh-completion"
     zplug "zsh-users/zsh-completions"
     zplug "zsh-users/zsh-syntax-highlighting", nice:10
+    zplug "felixr/docker-zsh-completion"
     zplug load --verbose
 fi
 
