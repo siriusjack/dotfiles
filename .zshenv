@@ -1,6 +1,7 @@
 ZDOTDIR="$HOME/.zsh"
 XDG_CONFIG_HOME="$HOME/.config"
 export HOEMBREW_GITHUB_API_TOCKER="6d18789e69eefe9e84731a599fc027b106928fd4"
+export EDITOR=vim
 
 # From zprezto
 # Ensure that a non-login, non-interactive shell has a defined environment.

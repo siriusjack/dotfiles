@@ -65,8 +65,8 @@ noremap <Plug>(ToggleColorColumn)
             \   join(range(81, 9999), ',')<CR>
 nmap cc <Plug>(ToggleColorColumn) 
 " syntax
-syntax on
 filetype plugin indent on
+syntax on
 "******************************************************************************
 " release autogroup in MyAutoCmd
 "******************************************************************************
@@ -87,3 +87,30 @@ if has("autocmd")
         \   exe "normal! g'\"" |
         \ endif
 endif
+"******************************************************************************
+" Dein.vim
+"******************************************************************************
+let s:dein_dir = expand('~/.vim/dein')
+let s:dein_repo_dir = s:dein_dir . '/repos/github.com/Shougo/dein.vim'
+
+if &runtimepath !~# '/dein.vim'
+    if !isdirectory(s:dein_repo_dir)
+        execute '!git clone https://github.com/Shougo/dein.vim' s:dein_repo_dir
+    endif
+    execute 'set runtimepath^=' . fnamemodify(s:dein_repo_dir, ':p')
+endif
+
+if dein#load_state(s:dein_dir)
+  let g:rc_dir    = expand('~/.vim/rc')
+  let s:toml      = g:rc_dir . '/dein.toml'
+  
+  call dein#begin(s:dein_dir)
+  call dein#load_toml(s:toml, {'lazy': 0})
+  call dein#end()
+  call dein#save_state()
+endif
+"******************************************************************************
+" KeyMapping
+"******************************************************************************
+let g:ctrlp_map = '<c-p>'
+let g:ctrlp_cmd = 'CtrlP'

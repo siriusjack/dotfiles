@@ -1,6 +1,12 @@
+# HOMEBREW
+export PATH=/usr/local/bin:/usr/local/sbin:$PATH
 # $HOME/local
 if [ -d $HOME/local/bin ]; then
     export PATH=$HOME/local/bin:$PATH
+fi
+# $HOME/.local
+if [ -d $HOME/.local/bin ]; then
+    export PATH=$HOME/.local/bin:$PATH
 fi
 # $HOME
 if [ -d $HOME/bin ]; then
@@ -11,6 +17,8 @@ if [ -d $HOME/go ]; then
     export GOPATH=$HOME/go
     export PATH=$GOPATH/bin:$PATH
 fi
+# CABAL
+export PATH="$HOME/Library/Haskell/bin:$PATH"
 #typeset -U path PATH
 
 # ----- ENV TOOLS ----- 
@@ -26,15 +34,15 @@ function anyenv_init() {
   eval "$(anyenv init - --no-rehash)"
 }
 function anyenv_unset() {
-  unset -f ndenv
+  unset -f nodenv
   unset -f rbenv
   unset -f pyenv 
   unset -f goenv 
 }
-function ndenv() {
+function nodenv() {
   anyenv_unset
   anyenv_init
-  ndenv "$@"
+  nodenv "$@"
 }
 function rbenv() {
   anyenv_unset
@@ -42,6 +50,7 @@ function rbenv() {
   rbenv "$@"
 }
 function pyenv() {
+  export PYENV_VIRTUALENV_DISABLE_PROMPT=0
   anyenv_unset
   anyenv_init
   pyenv "$@"

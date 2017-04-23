@@ -2,7 +2,6 @@
 /*
 /*/
 /.*/
-/.*/.*
 *.swp
 *.log
 
@@ -19,9 +18,9 @@
 !.zshrc*
 
 # editor
-!.emacs
-!.vim
 !.vimrc
+!.vim/*
+!.vim/rc/dein.toml
 
 # multiplexer
 !.tmux.conf
