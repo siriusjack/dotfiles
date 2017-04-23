@@ -7,7 +7,7 @@ endif
 " 256色モード
 set t_Co=256
 " Colorscheme
-colorscheme darkblue
+" colorscheme darkblue
 " using utf-8
 set encoding=utf-8
 scriptencoding utf-8
@@ -51,8 +51,8 @@ nnoremap <silent> <S-Down>  :5wincmd +<CR>
 " jjをESCに割当
 inoremap jj <Esc>
 " ;:を交換
-noremap ; :
-noremap : ;
+"noremap ; :
+"noremap : ;
 " .vimrcを編集
 noremap ,v :edit $MYVIMRC<CR>
 " カーソル行と列をハイライト(\cでスイッチ)
@@ -87,42 +87,3 @@ if has("autocmd")
         \   exe "normal! g'\"" |
         \ endif
 endif
-
-"******************************************************************************
-" Dein.vim
-"******************************************************************************
-if &compatible
-    set nocompatible
-endif
-
-let s:dein_dir = expand('~/.vim/dein')
-let s:dein_repo_dir = s:dein_dir . '/repos/github.com/Shougo/dein.vim'
-
-if &runtimepath !~# '/dein.vim'
-    if !isdirectory(s:dein_repo_dir)
-        execute '!git clone https://github.com/Shougo/dein.vim' s:dein_repo_dir
-    endif
-    execute 'set runtimepath^=' . fnamemodify(s:dein_repo_dir, ':p')
-endif
-
-if dein#load_state(s:dein_dir)
-  call dein#begin(s:dein_dir)
-
-  let g:rc_dir    = expand('~/.vim/rc')
-  let s:toml      = g:rc_dir . '/dein.toml'
-
-  call dein#load_toml(s:toml,      {'lazy': 0})
-
-  call dein#end()
-  call dein#save_state()
-endif
-
-if dein#check_install()
-  call dein#install()
-endif
-
-"******************************************************************************
-" KeyMapping
-"******************************************************************************
-let g:ctrlp_map = '<c-p>'
-let g:ctrlp_cmd = 'CtrlP'
