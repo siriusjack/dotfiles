@@ -19,8 +19,7 @@
 
 # editor
 !.vimrc
-!.vim/*
-!.vim/rc/dein.toml
+!.vim
 
 # multiplexer
 !.tmux.conf

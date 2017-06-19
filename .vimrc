@@ -90,7 +90,7 @@ endif
 "******************************************************************************
 " Dein.vim
 "******************************************************************************
-let s:dein_dir = expand('~/.vim/dein')
+let s:dein_dir = expand('~/.cache/dein')
 let s:dein_repo_dir = s:dein_dir . '/repos/github.com/Shougo/dein.vim'
 
 if &runtimepath !~# '/dein.vim'
@@ -101,13 +101,24 @@ if &runtimepath !~# '/dein.vim'
 endif
 
 if dein#load_state(s:dein_dir)
+  call dein#begin(s:dein_dir)
+
   let g:rc_dir    = expand('~/.vim/rc')
   let s:toml      = g:rc_dir . '/dein.toml'
+  let s:toml_lazy = g:rc_dir . '/dein_lazy.toml'
   
-  call dein#begin(s:dein_dir)
-  call dein#load_toml(s:toml, {'lazy': 0})
+  call dein#load_toml(s:toml,      {'lazy': 0})
+  call dein#load_toml(s:toml_lazy, {'lazy': 1})
+
   call dein#end()
   call dein#save_state()
+endif
+
+filetype plugin indent on
+syntax enable
+
+if dein#check_install()
+    call dein#install()
 endif
 "******************************************************************************
 " KeyMapping
