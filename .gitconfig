@@ -17,7 +17,7 @@
     st = status
 [ghq]
     root = ~/.ghq
-    root = ~/go/src
+    root = ~/.go/src
 [push]
     default = simple
 [filter "lfs"]
