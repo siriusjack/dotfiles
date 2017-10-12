@@ -16,7 +16,7 @@
     p = !git push origin `git rev-parse --abbrev-ref HEAD`
     st = status
 [ghq]
-    root = ~/ghq
+    root = ~/.ghq
     root = ~/go/src
 [push]
     default = simple
